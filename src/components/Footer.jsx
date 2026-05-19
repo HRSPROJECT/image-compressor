@@ -31,10 +31,8 @@ const Footer = () => {
       </div>
       
       <div style={{ display: 'flex', gap: '2rem', fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms</a>
-        <a href="#api-docs">API Documentation</a>
-        <a href="#support">Support</a>
+        <a href="https://github.com/HRSPROJECT/image-compressor" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        <a href="mailto:hrsprojects2024@gmail.com">Support</a>
       </div>
       
       <div style={{ fontSize: '0.875rem', color: 'var(--text-tertiary)' }}>
