@@ -8,11 +8,20 @@ function App() {
   const [files, setFiles] = useState([]);
   const [theme, setTheme] = useState('light');
 
-  // Initialize theme based on system preference
+  // Initialize theme based on localStorage or system preference
   useEffect(() => {
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (isDark) {
-      setTheme('dark');
+    const savedTheme = localStorage.getItem('fileora-theme');
+    let initialTheme = 'light';
+    
+    if (savedTheme) {
+      initialTheme = savedTheme;
+    } else {
+      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (isDark) initialTheme = 'dark';
+    }
+    
+    setTheme(initialTheme);
+    if (initialTheme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
     }
   }, []);
@@ -20,6 +29,7 @@ function App() {
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
+    localStorage.setItem('fileora-theme', newTheme);
     if (newTheme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
     } else {
