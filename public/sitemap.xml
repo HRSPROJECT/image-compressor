@@ -26,7 +26,37 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://fileora.tech/png-to-pdf</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://fileora.tech/merge-pdf</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://fileora.tech/compress-pdf</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://fileora.tech/split-pdf</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://fileora.tech/unlock-pdf</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://fileora.tech/resize-pdf</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://fileora.tech/crop-pdf</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>

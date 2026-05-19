@@ -27,20 +27,122 @@ export default function Navbar() {
   const isHome = location.pathname === '/'
   const toolsHref = isHome ? '#tools' : '/#tools'
 
-  const close = () => setOpen(false)
+  const close = () => {
+    setOpen(false)
+    setShowDropdown(false)
+  }
+
+  const [showDropdown, setShowDropdown] = useState(false)
+
+  const imageTools = [
+    { name: 'Image Compressor', to: '/compress' },
+    { name: 'Image Resizer', to: '/resize' },
+    { name: 'Image Converter', to: '/convert' },
+    { name: 'Image to PDF', to: '/image-to-pdf' },
+    { name: 'PNG to PDF', to: '/png-to-pdf' },
+  ]
+
+  const pdfTools = [
+    { name: 'PDF Compressor', to: '/compress-pdf' },
+    { name: 'Merge PDF', to: '/merge-pdf' },
+    { name: 'Split PDF', to: '/split-pdf' },
+    { name: 'Unlock PDF', to: '/unlock-pdf' },
+    { name: 'Resize PDF', to: '/resize-pdf' },
+    { name: 'Crop PDF', to: '/crop-pdf' },
+  ]
 
   return (
-    <header className="site-header">
+    <header className="site-header" style={{ position: 'sticky', top: 0, zIndex: 100 }}>
       <nav className="site-nav" aria-label="Primary navigation">
         <Link to="/" className="brand" onClick={close}>
           <Logo />
           <span>Fileora</span>
         </Link>
 
-        <div className="nav-links">
-          <a className={isHome ? 'nav-link active' : 'nav-link'} href={toolsHref}>
-            All Tools
-          </a>
+        <div className="nav-links" style={{ position: 'relative' }}>
+          <div 
+            className="dropdown-trigger"
+            onMouseEnter={() => setShowDropdown(true)}
+            onMouseLeave={() => setShowDropdown(false)}
+            style={{ display: 'inline-block' }}
+          >
+            <a 
+              className={isHome ? 'nav-link active' : 'nav-link'} 
+              href={toolsHref}
+              onClick={(e) => {
+                e.preventDefault()
+                setShowDropdown(!showDropdown)
+              }}
+              style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer' }}
+            >
+              All Tools <span style={{ fontSize: '10px', transition: 'transform 0.2s', transform: showDropdown ? 'rotate(180deg)' : 'none' }}>▼</span>
+            </a>
+            
+            {showDropdown && (
+              <div style={{
+                position: 'absolute',
+                top: '100%',
+                left: '0',
+                background: 'var(--bg-secondary, #111827)',
+                border: '1px solid var(--border-color, #1F2937)',
+                borderRadius: '12px',
+                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4)',
+                padding: '16px',
+                display: 'grid',
+                gridTemplateColumns: '220px 220px',
+                gap: '16px',
+                zIndex: 200,
+                backdropFilter: 'blur(12px)',
+                marginTop: '4px'
+              }}>
+                <div>
+                  <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#6EE7B7', letterSpacing: '0.05em', marginBottom: '8px', paddingLeft: '8px' }}>IMAGE TOOLS</div>
+                  {imageTools.map(t => (
+                    <NavLink 
+                      key={t.to} 
+                      to={t.to} 
+                      onClick={close}
+                      style={({ isActive }) => ({
+                        display: 'block',
+                        padding: '8px 12px',
+                        borderRadius: '6px',
+                        color: isActive ? '#6EE7B7' : 'var(--text-primary)',
+                        textDecoration: 'none',
+                        fontSize: '13px',
+                        transition: 'background 0.2s'
+                      })}
+                      className="nav-dropdown-item"
+                    >
+                      {t.name}
+                    </NavLink>
+                  ))}
+                </div>
+                <div>
+                  <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#6EE7B7', letterSpacing: '0.05em', marginBottom: '8px', paddingLeft: '8px' }}>PDF TOOLS</div>
+                  {pdfTools.map(t => (
+                    <NavLink 
+                      key={t.to} 
+                      to={t.to} 
+                      onClick={close}
+                      style={({ isActive }) => ({
+                        display: 'block',
+                        padding: '8px 12px',
+                        borderRadius: '6px',
+                        color: isActive ? '#6EE7B7' : 'var(--text-primary)',
+                        textDecoration: 'none',
+                        fontSize: '13px',
+                        transition: 'background 0.2s'
+                      })}
+                      className="nav-dropdown-item"
+                    >
+                      {t.name}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
           <a
             className="nav-link"
             href="https://github.com/HRSPROJECT/image-compressor"
@@ -77,18 +179,34 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="mobile-drawer">
-          <a href={toolsHref} onClick={close}>All Tools</a>
-          <NavLink to="/compress" onClick={close}>Image Compressor</NavLink>
-          <NavLink to="/resize" onClick={close}>Image Resizer</NavLink>
-          <NavLink to="/convert" onClick={close}>Image Converter</NavLink>
-          <NavLink to="/image-to-pdf" onClick={close}>Image to PDF</NavLink>
-          <NavLink to="/merge-pdf" onClick={close}>Merge PDF</NavLink>
-          <a href="https://github.com/HRSPROJECT/image-compressor" target="_blank" rel="noreferrer" onClick={close}>
+        <div className="mobile-drawer" style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 60px)', paddingBottom: '32px' }}>
+          <a href={toolsHref} onClick={close} style={{ fontWeight: 'bold', borderBottom: '1px solid var(--border-color)', paddingBottom: '8px' }}>All Tools</a>
+          
+          <div style={{ padding: '8px 0' }}>
+            <span style={{ fontSize: '11px', fontWeight: 'bold', color: '#6EE7B7', letterSpacing: '0.05em', display: 'block', margin: '8px 0 4px 8px' }}>IMAGE TOOLS</span>
+            {imageTools.map(t => (
+              <NavLink key={t.to} to={t.to} onClick={close} style={{ fontSize: '14px', padding: '6px 12px', display: 'block' }}>{t.name}</NavLink>
+            ))}
+          </div>
+
+          <div style={{ padding: '8px 0' }}>
+            <span style={{ fontSize: '11px', fontWeight: 'bold', color: '#6EE7B7', letterSpacing: '0.05em', display: 'block', margin: '8px 0 4px 8px' }}>PDF TOOLS</span>
+            {pdfTools.map(t => (
+              <NavLink key={t.to} to={t.to} onClick={close} style={{ fontSize: '14px', padding: '6px 12px', display: 'block' }}>{t.name}</NavLink>
+            ))}
+          </div>
+
+          <a href="https://github.com/HRSPROJECT/image-compressor" target="_blank" rel="noreferrer" onClick={close} style={{ borderTop: '1px solid var(--border-color)', marginTop: '8px', paddingTop: '12px' }}>
             GitHub / Open Source
           </a>
         </div>
       )}
+      <style>{`
+        .nav-dropdown-item:hover {
+          background: var(--bg-tertiary, #1F2937);
+        }
+      `}</style>
     </header>
   )
 }
+

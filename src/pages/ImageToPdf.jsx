@@ -28,11 +28,20 @@ export default function ImageToPdf() {
         <title>Free Image to PDF Converter Online | Fileora</title>
         <meta name="description" content="Convert JPG and PNG images to PDF free. Combine multiple images into one PDF. Browser-based, no signup." />
         <link rel="canonical" href="https://fileora.tech/image-to-pdf" />
+        <meta property="og:title" content="Free Image to PDF Converter Online | Fileora" />
+        <meta property="og:description" content="Convert JPG and PNG images to PDF free. Combine multiple images into one PDF. Browser-based, no signup." />
+        <meta property="og:url" content="https://fileora.tech/image-to-pdf" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <main className="tool-main">
-        <section className="tool-hero container"><h1>Free Image to PDF Converter Online</h1><p>Turn JPG, PNG and WebP images into a single PDF with page size and margin controls.</p></section>
+        <section className="tool-hero container">
+          <h1>Free Image to PDF Converter Online</h1>
+          <p>Turn JPG, PNG and WebP images into a single PDF with page size and margin controls. Absolutely private execution in your browser.</p>
+        </section>
         {files.length ? <ImageToPdfWorkspace files={files} setFiles={setFiles} onReset={() => setFiles([])} /> : <ImageToPdfLanding error={error} onFiles={(nextFiles) => {
           const supported = ['image/jpeg', 'image/png', 'image/webp']
           const accepted = nextFiles.filter((next) => supported.includes(next.type) && next.size <= 50 * 1024 * 1024)
@@ -43,8 +52,30 @@ export default function ImageToPdf() {
           setError('')
           setFiles(accepted)
         }} />}
+
+        <section className="container" style={{ margin: '48px auto', maxWidth: '800px', lineHeight: '1.6' }}>
+          <h2>Convert JPG, PNG & WebP to PDF</h2>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>
+            Transform your standard images and photos into standardized PDF documents. Ideal for school assignments, 
+            government registration forms, and corporate reports. Since we use pure Javascript client-side compilation, 
+            your files are never transmitted to any third-party server, ensuring complete confidentiality.
+          </p>
+          <p style={{ color: 'var(--text-secondary)' }}>
+            ✓ Custom page sizes (A4, Letter, Fit Image) · ✓ Margin settings (None, Small, Large) · ✓ Drag and drop reordering of images.
+          </p>
+        </section>
+
         <HowItWorks steps={[['Upload images', 'Add one or more JPG, PNG or WebP files.'], ['Set PDF layout', 'Choose page size, orientation, margins and order.'], ['Generate PDF', 'Download one PDF created in your browser.']]} />
         <FaqSection faqs={faqs} />
+
+        <section className="related-tools container" style={{ marginTop: '48px', borderTop: '1px solid var(--border-color)', paddingTop: '32px', textAlign: 'center', paddingBottom: '48px' }}>
+          <h3 style={{ marginBottom: '16px', fontSize: '1.2rem', color: 'var(--text-primary)' }}>Related Tools</h3>
+          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="/png-to-pdf" className="btn btn-secondary" style={{ fontSize: '13px', padding: '8px 16px' }}>PNG to PDF</a>
+            <a href="/merge-pdf" className="btn btn-secondary" style={{ fontSize: '13px', padding: '8px 16px' }}>Merge PDF</a>
+            <a href="/compress-pdf" className="btn btn-secondary" style={{ fontSize: '13px', padding: '8px 16px' }}>PDF Compressor</a>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

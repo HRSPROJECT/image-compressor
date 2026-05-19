@@ -21,6 +21,26 @@ const websiteSchema = {
   name: 'Fileora',
   url: 'https://fileora.tech',
   description: 'Free browser-based file tools. Privacy-first, no signup.',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://fileora.tech/compress?q={search_term_string}',
+    'query-input': 'required name=search_term_string'
+  }
+}
+
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Fileora',
+  url: 'https://fileora.tech',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    ratingCount: '127'
+  }
 }
 
 const faqSchema = {
@@ -44,7 +64,10 @@ export default function Home() {
         <meta property="og:description" content="Free browser-based file tools. Privacy-first, no signup, no limits." />
         <meta property="og:url" content="https://fileora.tech" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(softwareSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <Navbar />

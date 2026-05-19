@@ -292,6 +292,61 @@ const Workspace = ({ files, setFiles, onReset }) => {
               These settings will be applied to all {files.length} files in your batch queue instantly.
             </p>
             
+            {/* Quick Presets */}
+            <div style={{ marginBottom: '1.5rem' }}>
+              <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Quick Presets
+              </label>
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setFormat('JPEG');
+                    setQuality(60);
+                    setScale(85);
+                  }}
+                  className="preset-btn"
+                  style={{
+                    flex: 1,
+                    padding: '8px 12px',
+                    borderRadius: '6px',
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    backgroundColor: 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    color: 'var(--text-primary)',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
+                >
+                  WhatsApp Preset
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setFormat('WebP');
+                    setQuality(75);
+                    setScale(100);
+                  }}
+                  className="preset-btn"
+                  style={{
+                    flex: 1,
+                    padding: '8px 12px',
+                    borderRadius: '6px',
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    backgroundColor: 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    color: 'var(--text-primary)',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
+                >
+                  HD WebP
+                </button>
+              </div>
+            </div>
+
             {/* Format Toggle */}
             <div style={{ marginBottom: '1.5rem' }}>
               <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>

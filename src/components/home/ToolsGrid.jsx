@@ -1,4 +1,4 @@
-import { FileArchive, FileImage, FilePlus2, ImageIcon, Maximize2, Repeat2 } from 'lucide-react'
+import { FileArchive, FileImage, FilePlus2, ImageIcon, Maximize2, Repeat2, FileDown, Scissors, FileLock, Scale, Crop, FileText, ArrowLeftRight, FileSpreadsheet, Contact } from 'lucide-react'
 import ToolCard from '../shared/ToolCard'
 
 const tools = [
@@ -35,6 +35,14 @@ const tools = [
     formats: 'JPG · PNG · WebP',
   },
   {
+    href: '/png-to-pdf',
+    icon: <ImageIcon size={25} />,
+    title: 'PNG to PDF',
+    description: 'Convert PNG images to PDF online for free in your browser.',
+    badge: 'Live',
+    formats: 'PNG',
+  },
+  {
     href: '/merge-pdf',
     icon: <FileImage size={25} />,
     title: 'Merge PDF',
@@ -43,12 +51,84 @@ const tools = [
     formats: 'PDF',
   },
   {
-    href: '/pdf',
-    icon: <ImageIcon size={25} />,
+    href: '/compress-pdf',
+    icon: <FileDown size={25} />,
     title: 'PDF Compressor',
-    description: 'Reduce PDF file size while keeping readable text and sharp visuals.',
-    badge: 'Coming Soon',
+    description: 'Reduce PDF file size to 100KB, 200KB or 500KB in your browser.',
+    badge: 'Live',
     formats: 'PDF',
+  },
+  {
+    href: '/split-pdf',
+    icon: <Scissors size={25} />,
+    title: 'Split PDF',
+    description: 'Split PDF pages by range, extract specific pages, or remove pages.',
+    badge: 'Live',
+    formats: 'PDF',
+  },
+  {
+    href: '/unlock-pdf',
+    icon: <FileLock size={25} />,
+    title: 'Unlock PDF',
+    description: 'Remove password and protection from your PDF files online.',
+    badge: 'Live',
+    formats: 'PDF',
+  },
+  {
+    href: '/resize-pdf',
+    icon: <Scale size={25} />,
+    title: 'Resize PDF',
+    description: 'Change PDF page size to A4, Letter, A3 and more instantly.',
+    badge: 'Live',
+    formats: 'PDF',
+  },
+  {
+    href: '/crop-pdf',
+    icon: <Crop size={25} />,
+    title: 'Crop PDF',
+    description: 'Crop margins and define custom boundaries on PDF pages.',
+    badge: 'Live',
+    formats: 'PDF',
+  },
+  {
+    href: '/pdf-to-word',
+    icon: <FileText size={25} />,
+    title: 'PDF to Word',
+    description: 'Convert PDF files to editable Word documents.',
+    badge: 'Coming Soon',
+    formats: 'PDF → DOCX',
+  },
+  {
+    href: '/word-to-pdf',
+    icon: <FileText size={25} />,
+    title: 'Word to PDF',
+    description: 'Convert Word DOCX files to clean PDF files.',
+    badge: 'Coming Soon',
+    formats: 'DOCX → PDF',
+  },
+  {
+    href: '/excel-to-pdf',
+    icon: <FileSpreadsheet size={25} />,
+    title: 'Excel to PDF',
+    description: 'Convert Excel spreadsheets directly to print-ready PDF.',
+    badge: 'Coming Soon',
+    formats: 'XLSX → PDF',
+  },
+  {
+    href: '/pdf-to-jpg',
+    icon: <ArrowLeftRight size={25} />,
+    title: 'PDF to JPG',
+    description: 'Extract pages or images from PDF as JPEG formats.',
+    badge: 'Coming Soon',
+    formats: 'PDF → JPG',
+  },
+  {
+    href: '/passport-photo',
+    icon: <Contact size={25} />,
+    title: 'Passport Photo',
+    description: 'Crop and scale photos to standard passport size templates.',
+    badge: 'Coming Soon',
+    formats: 'JPG · PNG',
   },
 ]
 
@@ -66,3 +146,4 @@ export default function ToolsGrid(props) {
     </section>
   )
 }
+
