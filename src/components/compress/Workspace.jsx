@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Download, Shield, Settings, FileImage, ArrowLeft, Trash2, CheckCircle2, Share } from 'lucide-react';
 import JSZip from 'jszip';
-import { compressImage, formatBytes } from '../utils/compressor';
+import { compressImage, formatBytes } from '../../utils/imageUtils';
 import ImageComparisonSlider from './ImageComparisonSlider';
 
 const Workspace = ({ files, setFiles, onReset }) => {
@@ -59,25 +59,27 @@ const Workspace = ({ files, setFiles, onReset }) => {
   const handleDownloadAll = async () => {
     if (Object.keys(results).length === 0) return;
     
-    Object.keys(results).forEach((index, i) => {
+    // Instead of multiple popups, generate a single ZIP file containing all compressed images.
+    const zip = new JSZip();
+    Object.keys(results).forEach(index => {
       const res = results[index];
       const file = files[index];
       if (res && res.blob) {
-        // Slight delay for multiple files to prevent browser blocking
-        setTimeout(() => {
-          const nameWithoutExt = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
-          const ext = format.toLowerCase() === 'jpeg' ? 'jpg' : format.toLowerCase();
-          const url = URL.createObjectURL(res.blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = `${nameWithoutExt}-optimized.${ext}`;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-        }, i * 200);
+        const nameWithoutExt = file.name.substring(0, file.name.lastIndexOf('.')) || file.name;
+        const ext = format.toLowerCase() === 'jpeg' ? 'jpg' : format.toLowerCase();
+        zip.file(`${nameWithoutExt}-optimized.${ext}`, res.blob);
       }
     });
+
+    const zipBlob = await zip.generateAsync({ type: 'blob' });
+    const url = URL.createObjectURL(zipBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `fileora-optimized-batch.zip`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
 
   const removeFile = (indexToRemove, e) => {
@@ -172,7 +174,7 @@ const Workspace = ({ files, setFiles, onReset }) => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           
           {/* Main Canvas Area */}
-          <div className="card" style={{ height: '500px', padding: '1rem', display: 'flex', flexDirection: 'column' }}>
+          <div className="card" style={{ minHeight: '350px', height: 'max(50vh, 350px)', maxHeight: '600px', padding: '1rem', display: 'flex', flexDirection: 'column' }}>
             {isProcessing && !activeResult ? (
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-tertiary)' }}>
                 <div style={{ marginBottom: '1rem' }}>Processing batch queue ({progress}%)...</div>
@@ -181,13 +183,15 @@ const Workspace = ({ files, setFiles, onReset }) => {
                 </div>
               </div>
             ) : activeResult ? (
-              <ImageComparisonSlider 
-                originalUrl={activeResult.originalUrl} 
-                optimizedUrl={activeResult.optimizedUrl} 
-                originalSize={activeResult.originalSize}
-                optimizedSize={activeResult.optimizedSize}
-                key={activeFileIndex} // force re-render when switching images to reset slider
-              />
+              <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
+                <ImageComparisonSlider 
+                  originalUrl={activeResult.originalUrl} 
+                  optimizedUrl={activeResult.optimizedUrl} 
+                  originalSize={activeResult.originalSize}
+                  optimizedSize={activeResult.optimizedSize}
+                  key={activeFileIndex} // force re-render when switching images to reset slider
+                />
+              </div>
             ) : (
               <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-tertiary)' }}>
                 Processing image...
@@ -236,7 +240,7 @@ const Workspace = ({ files, setFiles, onReset }) => {
                           <span style={{ color: 'var(--text-secondary)' }}>
                             {formatBytes(res.originalSize)} → <span style={{ color: 'var(--accent-primary)', fontWeight: 600 }}>{formatBytes(res.optimizedSize)}</span>
                           </span>
-                          <span style={{ color: res.savings >= 0 ? '#10B981' : '#EF4444', fontWeight: 600 }}>
+                          <span style={{ color: res.savings >= 0 ? 'var(--success)' : 'var(--danger)', fontWeight: 600 }}>
                             {res.savings >= 0 ? '-' : '+'}{Math.abs(res.savings).toFixed(1)}%
                           </span>
                         </div>
@@ -248,7 +252,7 @@ const Workspace = ({ files, setFiles, onReset }) => {
                     <button 
                       onClick={(e) => removeFile(index, e)}
                       style={{ padding: '0.5rem', color: 'var(--text-tertiary)', background: 'none', border: 'none', cursor: 'pointer' }}
-                      onMouseOver={(e) => e.currentTarget.style.color = '#EF4444'}
+                      onMouseOver={(e) => e.currentTarget.style.color = 'var(--danger)'}
                       onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-tertiary)'}
                       title="Remove from queue"
                     >
@@ -277,7 +281,7 @@ const Workspace = ({ files, setFiles, onReset }) => {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)' }}>
                   <span>Total Savings</span>
-                  <span style={{ color: totals.savings >= 0 ? '#10B981' : '#EF4444', fontWeight: 600 }}>
+                  <span style={{ color: totals.savings >= 0 ? 'var(--success)' : 'var(--danger)', fontWeight: 600 }}>
                     {totals.savings >= 0 ? '-' : '+'}{Math.abs(totals.savings).toFixed(1)}%
                   </span>
                 </div>
@@ -374,7 +378,7 @@ const Workspace = ({ files, setFiles, onReset }) => {
                 <span>Processing...</span>
               ) : (
                 <>
-                  <Download size={20} /> {files.length > 1 ? 'Download All' : 'Download Image'}
+                  <Download size={20} /> {files.length > 1 ? 'Download ZIP' : 'Download Image'}
                 </>
               )}
             </button>

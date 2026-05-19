@@ -1,0 +1,100 @@
+import { useEffect, useState } from 'react'
+import { Download, GripVertical, FileText } from 'lucide-react'
+import { downloadBlob, formatBytes } from '../../utils/imageUtils'
+import { countPdfPages, mergePdfFiles } from '../../utils/pdfUtils'
+
+export default function MergePdfWorkspace({ files, setFiles, onReset }) {
+  const [pageCounts, setPageCounts] = useState({})
+  const [result, setResult] = useState(null)
+  const [processing, setProcessing] = useState(false)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    let active = true
+    Promise.all(files.map((file, index) => countPdfPages(file).then((count) => [index, count]).catch(() => [index, '?'])))
+      .then((entries) => {
+        if (active) setPageCounts(Object.fromEntries(entries))
+      })
+    return () => {
+      active = false
+    }
+  }, [files])
+
+  useEffect(() => {
+    if (files.length < 2) return
+    const id = setTimeout(() => {
+      merge()
+    }, 500)
+    return () => clearTimeout(id)
+  }, [files])
+
+  const move = (from, to) => {
+    if (to < 0 || to >= files.length) return
+    const next = [...files]
+    const [item] = next.splice(from, 1)
+    next.splice(to, 0, item)
+    setFiles(next)
+  }
+
+  const merge = async () => {
+    setProcessing(true)
+    setError('')
+    try {
+      const blob = await mergePdfFiles(files)
+      setResult(blob)
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setProcessing(false)
+    }
+  }
+
+  return (
+    <section className="workspace-panel">
+      <div className="workspace-preview" style={{ background: 'var(--bg-secondary)', borderRadius: '8px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+        {result ? (
+          <iframe 
+            src={URL.createObjectURL(result) + '#toolbar=0'} 
+            title="PDF Preview" 
+            style={{ width: '100%', height: '100%', flex: 1, border: 'none' }}
+          />
+        ) : (
+          <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <FileText size={44} style={{ opacity: 0.5 }} />
+          </div>
+        )}
+      </div>
+      <div className="workspace-controls">
+        <label>Files & Ordering</label>
+        <div className="file-list-panel" style={{ maxHeight: '200px', overflowY: 'auto', marginBottom: '16px', background: 'var(--bg-tertiary)', borderRadius: '8px', padding: '8px' }}>
+          {files.map((file, index) => (
+            <div className="sortable-row" key={`${file.name}-${index}`} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px', background: 'var(--bg-secondary)', borderRadius: '4px', marginBottom: '4px' }}>
+              <GripVertical size={18} style={{ cursor: 'grab', opacity: 0.5 }} />
+              <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontSize: '14px' }}>{index + 1}. {file.name}</span>
+              <small style={{ color: 'var(--text-tertiary)' }}>{pageCounts[index] ?? '...'} pages · {formatBytes(file.size)}</small>
+              <div style={{ display: 'flex', gap: '4px' }}>
+                <button className="mini-button" type="button" onClick={() => move(index, index - 1)} disabled={index === 0}>↑</button>
+                <button className="mini-button" type="button" onClick={() => move(index, index + 1)} disabled={index === files.length - 1}>↓</button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="file-chip">{files.length} PDFs selected</div>
+        <p className="muted-copy" style={{ fontSize: '0.85rem' }}>Pages are copied exactly as-is into one merged PDF. No recompression, no server upload.</p>
+        
+        {error && <p className="error-message">{error}</p>}
+        {result && (
+          <div className="success-banner" style={{ background: 'var(--bg-secondary)', padding: '12px', borderRadius: '8px', border: '1px solid var(--border-color)', color: 'var(--success)', margin: '16px 0' }}>
+            Merged PDF ready: {formatBytes(result.size)} {processing && <span style={{ opacity: 0.5 }}>(Updating...)</span>}
+          </div>
+        )}
+        <div className="action-row">
+          <button className="btn btn-secondary" style={{ flex: 1 }} type="button" onClick={onReset}>Choose PDFs</button>
+          <button className="btn btn-primary btn-gradient" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', background: 'linear-gradient(to right, #6EE7B7, #3B82F6)', color: '#000', fontWeight: 'bold' }} type="button" disabled={!result || processing} onClick={() => downloadBlob(result, 'fileora-merged.pdf')}>
+            <Download size={18} /> Download
+          </button>
+        </div>
+      </div>
+    </section>
+  )
+}

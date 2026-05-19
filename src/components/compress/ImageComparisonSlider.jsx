@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { formatBytes } from '../utils/compressor';
+import { formatBytes } from '../../utils/imageUtils';
 
 const ImageComparisonSlider = ({ originalUrl, optimizedUrl, originalSize, optimizedSize }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -55,10 +55,12 @@ const ImageComparisonSlider = ({ originalUrl, optimizedUrl, originalSize, optimi
         position: 'relative',
         width: '100%',
         height: '100%',
+        flex: 1,
         overflow: 'hidden',
+        border: '1px solid var(--border-color)',
         borderRadius: 'var(--radius-xl)',
         userSelect: 'none',
-        backgroundColor: '#f1f5f9'
+        backgroundColor: 'var(--bg-tertiary)'
       }}
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
