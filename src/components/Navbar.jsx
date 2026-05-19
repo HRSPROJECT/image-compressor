@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Moon, Sun, Share } from 'lucide-react';
+import { Moon, Sun, Share, Github } from 'lucide-react';
 
 const LogoSVG = ({ size = 32, opacity = 1 }) => (
   <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ opacity }}>
@@ -65,7 +65,19 @@ const Navbar = ({ theme, toggleTheme }) => {
           </a>
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <a 
+            href="https://github.com/HRSPROJECT/image-compressor" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn-ghost hide-on-mobile-text" 
+            style={{ padding: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-secondary)' }} 
+            title="Open Source on GitHub"
+          >
+            <Github size={20} />
+            <span style={{ fontSize: '0.875rem', fontWeight: 500 }}>Open Source</span>
+          </a>
+          <div style={{ width: '1px', height: '24px', backgroundColor: 'var(--border-color)', margin: '0 0.25rem' }}></div>
           <button onClick={handleShare} className="btn btn-ghost" style={{ padding: '0.5rem' }} aria-label="Share">
             <Share size={20} />
           </button>

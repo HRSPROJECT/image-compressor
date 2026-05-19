@@ -315,4 +315,7 @@ input:checked + .toggle-slider:before {
   .hero-subtitle {
     font-size: 1.125rem;
   }
+  .hide-on-mobile-text span {
+    display: none;
+  }
 }
