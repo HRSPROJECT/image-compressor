@@ -1,1 +1,5 @@
-/* /index.html 200
+/compress /index.html 200
+/resize /index.html 200
+/convert /index.html 200
+/image-to-pdf /index.html 200
+/merge-pdf /index.html 200
