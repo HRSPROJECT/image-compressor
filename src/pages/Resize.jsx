@@ -26,7 +26,7 @@ export default function Resize() {
       <Navbar />
       <Helmet>
         <title>Free Image Resizer Online — Resize JPG PNG WebP | Fileora</title>
-        <meta name="description" content="Resize images online for free. WhatsApp, Instagram, passport photo presets included. No signup, browser-based." />
+        <meta name="description" content="Resize images online for free. Custom dimensions or WhatsApp, Instagram, passport photo presets. No signup, browser-based." />
         <link rel="canonical" href="https://fileora.tech/resize" />
         <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
