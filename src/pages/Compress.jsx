@@ -45,8 +45,8 @@ export default function Compress() {
     <div className="app-shell">
       <Navbar />
       <Helmet>
-        <title>Free Image Compressor Online — JPEG, PNG, WebP, AVIF | Fileora</title>
-        <meta name="description" content="Compress images online for free. Reduce file size without losing quality. Supports JPEG, PNG, WebP, AVIF up to 50MB. Browser-based, no signup." />
+        <title>Free Image Compressor Online — JPEG PNG WebP | Fileora</title>
+        <meta name="description" content="Compress JPEG, PNG, WebP and AVIF images online for free. Reduce file size up to 90% without losing quality. No signup, browser-based." />
         <link rel="canonical" href="https://fileora.tech/compress" />
         <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

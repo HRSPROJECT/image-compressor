@@ -25,8 +25,8 @@ export default function ImageToPdf() {
     <div className="app-shell">
       <Navbar />
       <Helmet>
-        <title>Free Image to PDF Converter Online — JPG, PNG to PDF | Fileora</title>
-        <meta name="description" content="Convert JPG, PNG and WebP images to PDF online for free. Multiple images to one PDF. Browser-based, no signup." />
+        <title>Free Image to PDF Converter Online | Fileora</title>
+        <meta name="description" content="Convert JPG and PNG images to PDF free. Combine multiple images into one PDF. Browser-based, no signup." />
         <link rel="canonical" href="https://fileora.tech/image-to-pdf" />
         <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

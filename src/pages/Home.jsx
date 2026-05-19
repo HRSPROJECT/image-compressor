@@ -38,7 +38,7 @@ export default function Home() {
     <div className="app-shell">
       <Helmet>
         <title>Fileora — Free Online File Tools</title>
-        <meta name="description" content="Free browser-based file tools. Compress images, resize photos, convert formats, create PDFs and more. No signup, no server uploads, completely private." />
+        <meta name="description" content="Free browser-based file tools. Compress images, resize photos, convert formats, merge PDFs. No signup, files never leave your device." />
         <link rel="canonical" href="https://fileora.tech" />
         <meta property="og:title" content="Fileora — Free Online File Tools" />
         <meta property="og:description" content="Free browser-based file tools. Privacy-first, no signup, no limits." />

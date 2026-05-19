@@ -25,8 +25,8 @@ export default function Convert() {
     <div className="app-shell">
       <Navbar />
       <Helmet>
-        <title>Free Image Converter Online — JPG to PNG, WebP, AVIF | Fileora</title>
-        <meta name="description" content="Convert images between JPG, PNG, WebP and AVIF formats instantly. Browser-based, no signup, no quality loss." />
+        <title>Free Image Converter — JPG to PNG WebP AVIF | Fileora</title>
+        <meta name="description" content="Convert images between JPG, PNG, WebP and AVIF online for free. Instant browser-based conversion. No signup." />
         <link rel="canonical" href="https://fileora.tech/convert" />
         <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

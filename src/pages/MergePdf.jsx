@@ -25,8 +25,8 @@ export default function MergePdf() {
     <div className="app-shell">
       <Navbar />
       <Helmet>
-        <title>Free PDF Merger Online — Combine PDF Files | Fileora</title>
-        <meta name="description" content="Merge multiple PDF files into one online for free. Drag to reorder pages. Browser-based, no signup, files never uploaded." />
+        <title>Free PDF Merger Online — Combine PDFs | Fileora</title>
+        <meta name="description" content="Merge multiple PDF files into one free. Drag to reorder. Files never leave your browser. No signup." />
         <link rel="canonical" href="https://fileora.tech/merge-pdf" />
         <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
