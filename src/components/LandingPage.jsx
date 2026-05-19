@@ -28,22 +28,9 @@ const LandingPage = ({ onFileSelect }) => {
 
       {/* Upload Box */}
       <div 
-        className="card delay-100"
+        className="card delay-100 upload-box"
         onDrop={handleDrop}
         onDragOver={handleDragOver}
-        style={{
-          maxWidth: '800px',
-          margin: '0 auto',
-          padding: '4rem 2rem',
-          textAlign: 'center',
-          borderStyle: 'dashed',
-          borderWidth: '2px',
-          borderColor: 'var(--border-color)',
-          backgroundColor: 'var(--bg-secondary)',
-          cursor: 'pointer',
-          position: 'relative',
-          overflow: 'hidden'
-        }}
       >
         <div style={{ pointerEvents: 'none' }}>
           <UploadCloud size={48} color="var(--accent-primary)" style={{ margin: '0 auto 1.5rem', opacity: 0.8 }} />
@@ -83,18 +70,9 @@ const LandingPage = ({ onFileSelect }) => {
           <p style={{ color: 'var(--text-secondary)' }}>Everything you need to know about getting the perfect balance between file size and visual fidelity.</p>
         </div>
 
-        <div style={{ 
-          display: 'flex', 
-          overflowX: 'auto', 
-          gap: '2rem', 
-          padding: '1rem', 
-          scrollSnapType: 'x mandatory',
-          scrollbarWidth: 'none', /* Firefox */
-          msOverflowStyle: 'none', /* IE/Edge */
-          WebkitOverflowScrolling: 'touch',
-        }}>
+        <div className="features-grid">
           {/* Card 1 */}
-          <div className="card" style={{ minWidth: '320px', maxWidth: '350px', flex: '0 0 auto', padding: '2rem', scrollSnapAlign: 'start' }}>
+          <div className="card" style={{ padding: '2rem' }}>
             <Zap size={24} color="var(--accent-primary)" style={{ marginBottom: '1.5rem' }} />
             <h3 style={{ marginBottom: '1rem', fontSize: '1.25rem' }}>Lightning Fast</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
@@ -103,7 +81,7 @@ const LandingPage = ({ onFileSelect }) => {
           </div>
           
           {/* Card 2 */}
-          <div className="card" style={{ minWidth: '320px', maxWidth: '350px', flex: '0 0 auto', padding: '2rem', scrollSnapAlign: 'start' }}>
+          <div className="card" style={{ padding: '2rem' }}>
             <Cpu size={24} color="var(--accent-primary)" style={{ marginBottom: '1.5rem' }} />
             <h3 style={{ marginBottom: '1rem', fontSize: '1.25rem' }}>Lossless Quality</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
@@ -112,7 +90,7 @@ const LandingPage = ({ onFileSelect }) => {
           </div>
           
           {/* Card 3 */}
-          <div className="card" style={{ minWidth: '320px', maxWidth: '350px', flex: '0 0 auto', padding: '2rem', scrollSnapAlign: 'start' }}>
+          <div className="card" style={{ padding: '2rem' }}>
             <Shield size={24} color="var(--accent-primary)" style={{ marginBottom: '1.5rem' }} />
             <h3 style={{ marginBottom: '1rem', fontSize: '1.25rem' }}>Privacy Guaranteed</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', lineHeight: 1.6 }}>
@@ -121,7 +99,7 @@ const LandingPage = ({ onFileSelect }) => {
           </div>
           
           {/* Card 4 - Batch Processing */}
-          <div className="card" style={{ minWidth: '320px', maxWidth: '350px', flex: '0 0 auto', padding: '2rem', scrollSnapAlign: 'start' }}>
+          <div className="card" style={{ padding: '2rem' }}>
             <UploadCloud size={24} color="var(--accent-primary)" style={{ marginBottom: '1.5rem' }} />
             <h3 style={{ marginBottom: '1rem', fontSize: '1.25rem' }}>Batch Processing</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', lineHeight: 1.6 }}>

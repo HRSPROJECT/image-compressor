@@ -74,7 +74,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           <span>Fileora</span>
         </div>
         
-        <div style={{ display: 'flex', gap: '2rem', fontSize: '0.875rem', fontWeight: 500, color: 'var(--text-secondary)' }}>
+        <div className="hide-on-mobile" style={{ display: 'flex', gap: '2rem', fontSize: '0.875rem', fontWeight: 500, color: 'var(--text-secondary)' }}>
           <a href="#features" style={{ transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>Features</a>
           <a href="#tools" style={{ transition: 'color 0.2s', display: 'flex', alignItems: 'center', gap: '0.25rem' }} onMouseOver={(e) => e.target.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>
             All Tools

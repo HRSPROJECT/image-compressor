@@ -16,15 +16,7 @@ const LogoSVG = ({ size = 32, opacity = 1 }) => (
 
 const Footer = () => {
   return (
-    <footer style={{
-      padding: '4rem 2rem',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      borderTop: '1px solid var(--border-color)',
-      marginTop: '6rem',
-      backgroundColor: 'var(--bg-secondary)'
-    }}>
+    <footer className="footer-container">
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 800, marginBottom: '2rem', fontSize: '1.25rem', letterSpacing: '-0.025em', opacity: 0.8, filter: 'grayscale(100%)' }}>
         <LogoSVG size={28} />
         <span>Fileora</span>
