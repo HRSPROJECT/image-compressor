@@ -22,7 +22,10 @@ const routes = [
   '/split-pdf',
   '/unlock-pdf',
   '/resize-pdf',
-  '/crop-pdf'
+  '/crop-pdf',
+  '/pdf-to-jpg',
+  '/heic-to-jpg',
+  '/jpg-to-pdf'
 ];
 
 async function prerender() {

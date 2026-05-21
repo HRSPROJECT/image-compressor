@@ -18,6 +18,9 @@ const UnlockPdf = React.lazy(() => import('./pages/UnlockPdf'))
 const ResizePdf = React.lazy(() => import('./pages/ResizePdf'))
 const CropPdf = React.lazy(() => import('./pages/CropPdf'))
 const PngToPdf = React.lazy(() => import('./pages/PngToPdf'))
+const PdfToJpg = React.lazy(() => import('./pages/PdfToJpg'))
+const HeicToJpg = React.lazy(() => import('./pages/HeicToJpg'))
+const JpgToPdf = React.lazy(() => import('./pages/JpgToPdf'))
 
 const LoadingFallback = () => (
   <div style={{
@@ -67,6 +70,9 @@ export default function App() {
               <Route path="/resize-pdf" element={<ResizePdf />} />
               <Route path="/crop-pdf" element={<CropPdf />} />
               <Route path="/png-to-pdf" element={<PngToPdf />} />
+              <Route path="/pdf-to-jpg" element={<PdfToJpg />} />
+              <Route path="/heic-to-jpg" element={<HeicToJpg />} />
+              <Route path="/jpg-to-pdf" element={<JpgToPdf />} />
             </Routes>
           </Suspense>
         </BrowserRouter>

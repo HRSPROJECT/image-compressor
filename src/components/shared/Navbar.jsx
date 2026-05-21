@@ -40,6 +40,8 @@ export default function Navbar() {
     { name: 'Image Converter', to: '/convert' },
     { name: 'Image to PDF', to: '/image-to-pdf' },
     { name: 'PNG to PDF', to: '/png-to-pdf' },
+    { name: 'HEIC to JPG', to: '/heic-to-jpg' },
+    { name: 'JPG to PDF', to: '/jpg-to-pdf' },
   ]
 
   const pdfTools = [
@@ -49,6 +51,7 @@ export default function Navbar() {
     { name: 'Unlock PDF', to: '/unlock-pdf' },
     { name: 'Resize PDF', to: '/resize-pdf' },
     { name: 'Crop PDF', to: '/crop-pdf' },
+    { name: 'PDF to JPG', to: '/pdf-to-jpg' },
   ]
 
   return (

@@ -14,6 +14,9 @@ export default function Footer() {
     ['Unlock PDF', '/unlock-pdf'],
     ['Resize PDF', '/resize-pdf'],
     ['Crop PDF', '/crop-pdf'],
+    ['PDF to JPG', '/pdf-to-jpg'],
+    ['HEIC to JPG', '/heic-to-jpg'],
+    ['JPG to PDF', '/jpg-to-pdf'],
   ]
 
   return (
