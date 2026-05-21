@@ -51,7 +51,7 @@ export default function CompressPdf() {
 
       const bytes = await file.arrayBuffer()
       const doc = await PDFDocument.load(bytes)
-      
+
       // Re-create the PDF document to optimize object streams
       const newDoc = await PDFDocument.create()
       const copiedPages = await newDoc.copyPages(doc, doc.getPageIndices())
@@ -276,8 +276,8 @@ export default function CompressPdf() {
         <section className="container" style={{ margin: '48px auto', maxWidth: '800px', lineHeight: '1.6' }}>
           <h2>State-of-the-Art Browser-Based PDF Compressor</h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>
-            Perfect for Indian students and government portals that enforce strict upload limits like 100KB, 200KB or 500KB. 
-            Because this tool executes client-side using advanced WebAssembly streams, it works instantly on your phone 
+            Perfect for Indian students and government portals that enforce strict upload limits like 100KB, 200KB or 500KB.
+            Because this tool executes client-side using advanced WebAssembly streams, it works instantly on your phone
             or computer with zero server roundtrips.
           </p>
           <p style={{ color: 'var(--text-secondary)' }}>
