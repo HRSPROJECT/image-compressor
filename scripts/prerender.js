@@ -34,7 +34,10 @@ const routes = [
   '/sign-pdf',
   '/pdf-to-word',
   '/word-to-pdf',
-  '/scanner'
+  '/scanner',
+  '/alternative/ilovepdf',
+  '/alternative/smallpdf',
+  '/alternative/camscanner'
 ];
 
 async function prerender() {

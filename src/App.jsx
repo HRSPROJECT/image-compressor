@@ -31,6 +31,11 @@ const PdfToWord = React.lazy(() => import('./pages/PdfToWord'))
 const WordToPdf = React.lazy(() => import('./pages/WordToPdf'))
 const Scanner = React.lazy(() => import('./pages/Scanner'))
 
+// Lazy-loaded competitor comparison alternative pages
+const IlovepdfAlternative = React.lazy(() => import('./pages/IlovepdfAlternative'))
+const SmallpdfAlternative = React.lazy(() => import('./pages/SmallpdfAlternative'))
+const CamscannerAlternative = React.lazy(() => import('./pages/CamscannerAlternative'))
+
 
 const LoadingFallback = () => (
   <div style={{
@@ -103,6 +108,11 @@ export default function App() {
               <Route path="/pdf-to-word" element={<PdfToWord />} />
               <Route path="/word-to-pdf" element={<WordToPdf />} />
               <Route path="/scanner" element={<Scanner />} />
+              
+              {/* Competitor Alternative Comparison Routes */}
+              <Route path="/alternative/ilovepdf" element={<IlovepdfAlternative />} />
+              <Route path="/alternative/smallpdf" element={<SmallpdfAlternative />} />
+              <Route path="/alternative/camscanner" element={<CamscannerAlternative />} />
             </Routes>
           </Suspense>
         </BrowserRouter>

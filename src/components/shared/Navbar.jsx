@@ -46,6 +46,7 @@ export default function Navbar() {
   ]
 
   const pdfTools = [
+    { name: 'AI Document Scanner', to: '/scanner' },
     { name: 'PDF Compressor', to: '/compress-pdf' },
     { name: 'Merge PDF', to: '/merge-pdf' },
     { name: 'Split PDF', to: '/split-pdf' },
@@ -154,6 +155,9 @@ export default function Navbar() {
             )}
           </div>
 
+          <NavLink className="nav-link" to="/scanner">
+            AI Scanner
+          </NavLink>
           <a
             className="nav-link"
             href="https://github.com/HRSPROJECT/image-compressor"

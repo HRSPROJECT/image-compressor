@@ -15,6 +15,21 @@ const faqs = [
   { q: 'What file formats does Fileora support?', a: 'JPEG, PNG, WebP, AVIF for images. PDF for document tools. More formats coming soon.' },
 ]
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Fileora',
+  url: 'https://fileora.tech',
+  logo: 'https://fileora.tech/favicon.svg',
+  description: 'Privacy-first, 100% offline browser-based document and image converter utilities suite.',
+  knowsAbout: [
+    'PDF compression',
+    'image optimization',
+    'document scanning',
+    'privacy-first utilities'
+  ]
+}
+
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -66,6 +81,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://fileora.tech/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(softwareSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
