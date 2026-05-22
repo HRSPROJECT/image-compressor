@@ -558,7 +558,7 @@ export default function PdfToWord() {
           <section className="container" style={{ marginBottom: '32px' }}>
             
             {/* Symmetrical Responsive Workspace Grid */}
-            <div className="responsive-workspace">
+            <div className="responsive-workspace converter-workspace">
               
               {/* Left Panel: Conversion Controls & Reset Button */}
               <div className="workspace-controls-sidebar">

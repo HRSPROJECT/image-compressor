@@ -399,7 +399,7 @@ export default function WordToPdf() {
           <section className="container" style={{ marginBottom: '32px' }}>
             
             {/* Symmetrical Responsive Workspace Grid */}
-            <div className="responsive-workspace">
+            <div className="responsive-workspace converter-workspace">
               
               {/* Left Panel: Configuration Options & Reset Button */}
               <div className="workspace-controls-sidebar">

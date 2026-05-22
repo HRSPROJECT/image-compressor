@@ -947,20 +947,11 @@ img {
 }
 
 /* Responsive workspace design */
-@media (min-width: 1025px) {
-  .responsive-workspace {
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 24px;
-    align-items: start;
-  }
-}
-@media (max-width: 1024px) {
-  .responsive-workspace {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+.responsive-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
 }
 
 .workspace-controls-sidebar {
@@ -974,11 +965,121 @@ img {
   width: 100%;
 }
 
-.workspace-preview-hub {
+.scanner-preview-container {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  justify-content: space-between;
+  padding: 24px;
+  position: relative;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  min-height: 620px;
+}
+
+@media (min-width: 1025px) {
+  .responsive-workspace {
+    display: grid;
+    align-items: start;
+  }
+  .responsive-workspace.converter-workspace {
+    grid-template-columns: 340px 1fr;
+    gap: 24px;
+  }
+  .responsive-workspace.scanner-workspace {
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+  }
+  .responsive-workspace.scanner-workspace.no-pages {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .responsive-workspace {
+    gap: 20px;
+  }
+  .workspace-controls-sidebar {
+    order: 2;
+    padding: 1.2rem;
+  }
+  .scanner-preview-container {
+    order: 1;
+    min-height: auto;
+    padding: 16px;
+  }
+}
+
+/* Webcam feed layout headers and control wrappers */
+.scanner-camera-header {
+  display: flex;
   width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.scanner-camera-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .scanner-camera-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .scanner-camera-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .scanner-camera-controls select {
+    flex: 1;
+    max-width: calc(100% - 110px);
+  }
+}
+
+/* Tesseract OCR Panel responsive columns */
+.ocr-split-pane {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .ocr-split-pane {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    min-height: auto;
+  }
+}
+
+/* Premium Workspace Tabs */
+.editor-mode-tabs {
+  display: flex;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  padding: 4px;
+  border-radius: 8px;
+  width: 100%;
+  justify-content: stretch;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+  .editor-mode-tabs {
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 
 @media (max-width: 768px) {

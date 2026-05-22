@@ -593,7 +593,7 @@ export default function PassportPhoto() {
               {/* Background replacement controls */}
               <div style={{ padding: '12px', background: 'var(--bg-primary)', borderRadius: '6px', border: '1px solid var(--border-color)' }}>
                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '8px', textTransform: 'uppercase' }}>Change Background Backdrop</label>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '6px', marginBottom: '10px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(65px, 1fr))', gap: '6px', marginBottom: '10px' }}>
                   {[
                     { id: 'original', label: 'Original', color: 'transparent' },
                     { id: '#FFFFFF', label: 'White', color: '#FFFFFF' },
@@ -696,7 +696,7 @@ export default function PassportPhoto() {
               {layoutMode === 'a4' && (
                 <div>
                   <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '6px' }}>Number of Photos ({gridCount})</label>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '6px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(70px, 1fr))', gap: '6px' }}>
                     {[4, 6, 8, 12].map((num) => (
                       <button
                         key={num}

@@ -1082,25 +1082,33 @@ export default function Scanner() {
     window.addEventListener('touchend', handleEnd);
   };
 
-  // Adjust display wrapper size depending on aspect ratio
+  // Adjust display wrapper size depending on aspect ratio and handle window resizing
   useEffect(() => {
-    if (currentPageIdx < 0 || !cropContainerRef.current) return;
-    const page = pages[currentPageIdx];
-    const originalRatio = page.originalWidth / page.originalHeight;
+    if (currentPageIdx < 0) return;
 
-    const maxWidth = Math.min(window.innerWidth - 64, 480);
-    const maxHeight = 500;
-    
-    let w = maxWidth;
-    let h = w / originalRatio;
+    const handleResize = () => {
+      const page = pages[currentPageIdx];
+      if (!page) return;
+      const originalRatio = page.originalWidth / page.originalHeight;
 
-    if (h > maxHeight) {
-      h = maxHeight;
-      w = h * originalRatio;
-    }
+      const maxWidth = Math.min(window.innerWidth - 40, 480);
+      const maxHeight = Math.min(window.innerHeight - 300, 500);
+      
+      let w = maxWidth;
+      let h = w / originalRatio;
 
-    setDisplayWidth(w);
-    setDisplayHeight(h);
+      if (h > maxHeight) {
+        h = maxHeight;
+        w = h * originalRatio;
+      }
+
+      setDisplayWidth(w);
+      setDisplayHeight(h);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [currentPageIdx, pages]);
 
   // Set filter type on active page
@@ -1281,11 +1289,11 @@ export default function Scanner() {
         </section>
 
         <section className="container" style={{ marginBottom: '64px' }}>
-          <div className="responsive-workspace" style={{ display: 'grid', gridTemplateColumns: pages.length > 0 ? '280px 1fr' : '1fr', gap: '24px', alignItems: 'start' }}>
+          <div className={`responsive-workspace scanner-workspace ${pages.length === 0 ? 'no-pages' : ''}`}>
             
             {/* 1. Left Queue Panel: Page thumbnails drawer */}
             {pages.length > 0 && (
-              <div className="workspace-controls-sidebar" style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxHeight: '680px', overflowY: 'auto' }}>
+              <div className="workspace-controls-sidebar">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-secondary)' }}>Pages ({pages.length})</span>
                   <button onClick={() => { startCamera(); }} className="btn btn-ghost" style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: '4px 10px', fontSize: '12px' }}>
@@ -1395,7 +1403,7 @@ export default function Scanner() {
             )}
 
             {/* 2. Right Main Working Workspace: Webcam Stream or Perspective Quad Cropper */}
-            <div className="workspace-preview-container" style={{ flex: 1, minHeight: '620px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '24px', position: 'relative' }}>
+            <div className="scanner-preview-container">
               
               {/* Duplicate Scanner Modal Alert Overlay */}
               {pendingDuplicatePage && (
@@ -1552,18 +1560,18 @@ export default function Scanner() {
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', height: '100%' }}>
                   
                   {/* Camera Header controls */}
-                  <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+                  <div className="scanner-camera-header">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <Video size={16} style={{ color: 'var(--accent-primary)' }} />
                       <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-primary)' }}>Live Webcam Viewfinder</span>
                     </div>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <div className="scanner-camera-controls">
                       {devices.length > 1 && (
                         <select 
                           value={selectedDeviceId} 
                           onChange={(e) => handleDeviceChange(e.target.value)} 
-                          style={{ minHeight: '32px', height: '32px', fontSize: '12px', borderRadius: '6px', padding: '0 8px' }}
+                          style={{ minHeight: '32px', height: '32px', fontSize: '12px', borderRadius: '6px', padding: '0 8px', maxWidth: '100%' }}
                         >
                           {devices.map(d => (
                             <option key={d.deviceId} value={d.deviceId}>{d.label || `Camera ${d.deviceId.slice(0,4)}`}</option>
@@ -1788,16 +1796,7 @@ export default function Scanner() {
                   </div>
 
                   {/* Mode Toggles: Crop corners vs Preview filtered scan vs Extracted OCR Text */}
-                  <div style={{
-                    display: 'flex',
-                    background: 'var(--bg-tertiary)',
-                    border: '1px solid var(--border-color)',
-                    padding: '4px',
-                    borderRadius: '8px',
-                    width: '100%',
-                    justifyContent: 'stretch',
-                    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1)'
-                  }}>
+                  <div className="editor-mode-tabs">
                     <button
                       onClick={() => setEditorMode('crop')}
                       style={{
@@ -1970,15 +1969,7 @@ export default function Scanner() {
                         )}
                       </div>
                     ) : editorMode === 'ocr' ? (
-                      <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'minmax(260px, 320px) 1fr',
-                        gap: '24px',
-                        width: '100%',
-                        height: '100%',
-                        minHeight: '440px',
-                        alignItems: 'stretch'
-                      }}>
+                      <div className="ocr-split-pane">
                         {/* Left Side: Warped image preview */}
                         <div style={{
                           position: 'relative',
