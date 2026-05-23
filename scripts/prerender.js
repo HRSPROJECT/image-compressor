@@ -70,7 +70,7 @@ async function prerender() {
       const url = `http://localhost:${PORT}${route}`;
       
       try {
-        await page.goto(url, { waitUntil: 'networkidle0', timeout: 10000 });
+        await page.goto(url, { waitUntil: 'networkidle0', timeout: 20000 });
         
         // Wait an additional 500ms to allow any immediate micro-render to complete
         await new Promise((resolve) => setTimeout(resolve, 500));

@@ -78,16 +78,16 @@ export default function Home() {
   return (
     <div className="app-shell">
       <Helmet>
-        <title>Fileora — Free Online File Tools | Compress, Convert & Merge Files</title>
+        <title>Fileora — Free Online File Tools | Compress &amp; Convert Files</title>
         <meta name="description" content="Free browser-based file tools. Compress images, resize photos, convert formats, merge PDFs. No signup, files never leave your device." />
         <link rel="canonical" href="https://fileora.tech" data-rh="true" />
-        <meta property="og:title" content="Fileora — Free Online File Tools | Compress, Convert & Merge Files" />
+        <meta property="og:title" content="Fileora — Free Online File Tools | Compress &amp; Convert Files" />
         <meta property="og:description" content="Free browser-based file tools. Privacy-first, no signup, no limits." />
         <meta property="og:url" content="https://fileora.tech" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://fileora.tech/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Fileora — Free Online File Tools | Compress, Convert & Merge Files" />
+        <meta name="twitter:title" content="Fileora — Free Online File Tools | Compress &amp; Convert Files" />
         <meta name="twitter:description" content="Free browser-based file tools. Privacy-first, no signup." />
         <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
