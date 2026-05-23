@@ -69,7 +69,7 @@ export default function SmallpdfAlternative() {
       <Helmet>
         <title>Free Smallpdf Alternative: Unlimited, No Limits & Private | Fileora</title>
         <meta name="description" content="Tired of the Smallpdf 2-file daily limit? Meet Fileora—the 100% free, unlimited, and private Smallpdf alternative. Process PDFs offline. No signup required." />
-        <link rel="canonical" href="https://fileora.tech/alternative/smallpdf" />
+        <link rel="canonical" href="https://fileora.tech/alternative/smallpdf" data-rh="true" />
         <meta property="og:title" content="Free Smallpdf Alternative: Unlimited, No Limits & Private | Fileora" />
         <meta property="og:description" content="Convert and compress PDFs without boundaries. Fileora processes files completely inside your browser locally—meaning zero uploads, no quotas, and no subscription traps." />
         <meta property="og:url" content="https://fileora.tech/alternative/smallpdf" />

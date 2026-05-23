@@ -38,31 +38,9 @@ const CamscannerAlternative = React.lazy(() => import('./pages/CamscannerAlterna
 
 
 const LoadingFallback = () => (
-  <div style={{
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    background: 'var(--bg-primary, #0B0F19)',
-    color: 'var(--text-primary, #F3F4F6)',
-    fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    gap: '16px'
-  }}>
-    <div style={{
-      width: '40px',
-      height: '40px',
-      border: '3px solid rgba(110, 231, 183, 0.1)',
-      borderTopColor: '#6EE7B7',
-      borderRadius: '50%',
-      animation: 'spin 1s linear infinite'
-    }} />
-    <style>{`
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
-    `}</style>
-    <span style={{ fontSize: '14px', fontWeight: 500, letterSpacing: '0.05em', opacity: 0.8 }}>LOADING FILEORA TOOL...</span>
+  <div className="loader-shell">
+    <div className="loader-spinner" />
+    <span className="loader-text">LOADING FILEORA TOOL...</span>
   </div>
 )
 

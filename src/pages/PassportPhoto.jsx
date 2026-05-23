@@ -464,7 +464,7 @@ export default function PassportPhoto() {
       <Helmet>
         <title>Passport Photo Maker Online - Free & Private | Fileora</title>
         <meta name="description" content="Generate print-ready passport size photos online for free. Templates for US, UK, EU, India visas. Crop, replace backdrop colors (white/blue), and layout print grids locally." />
-        <link rel="canonical" href="https://fileora.tech/passport-photo" />
+        <link rel="canonical" href="https://fileora.tech/passport-photo" data-rh="true" />
         <meta property="og:title" content="Passport Photo Maker Online - Free & Private | Fileora" />
         <meta property="og:description" content="Generate print-ready passport size photos online for free. Templates for US, UK, EU, India visas. Crop, replace backdrop colors (white/blue), and layout print grids locally." />
         <meta property="og:url" content="https://fileora.tech/passport-photo" />

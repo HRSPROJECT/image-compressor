@@ -185,7 +185,7 @@ export default function RotatePdf() {
       <Helmet>
         <title>Rotate PDF Online - Free Page Rotator | Fileora</title>
         <meta name="description" content="Rotate PDF files online for free. Rotate individual pages or all pages at once. Purely browser-based client-side PDF rotation utility. Lossless and private." />
-        <link rel="canonical" href="https://fileora.tech/rotate-pdf" />
+        <link rel="canonical" href="https://fileora.tech/rotate-pdf" data-rh="true" />
         <meta property="og:title" content="Rotate PDF Online - Free Page Rotator | Fileora" />
         <meta property="og:description" content="Rotate PDF files online for free. Rotate individual pages or all pages at once. Purely browser-based client-side PDF rotation utility. Lossless and private." />
         <meta property="og:url" content="https://fileora.tech/rotate-pdf" />

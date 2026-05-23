@@ -117,7 +117,7 @@ export default function JpgToPdf() {
       <Helmet>
         <title>Convert JPG to PDF Online - Free & Private | Fileora</title>
         <meta name="description" content="Convert JPG images to PDF online for free. Arrange pages in custom order, adjust page size, orientation, and margins. Safe, local client-side compilation." />
-        <link rel="canonical" href="https://fileora.tech/jpg-to-pdf" />
+        <link rel="canonical" href="https://fileora.tech/jpg-to-pdf" data-rh="true" />
         <meta property="og:title" content="Convert JPG to PDF Online - Free & Private | Fileora" />
         <meta property="og:description" content="Convert JPG images to PDF online for free. Arrange pages in custom order, adjust page size, orientation, and margins. Safe, local client-side compilation." />
         <meta property="og:url" content="https://fileora.tech/jpg-to-pdf" />

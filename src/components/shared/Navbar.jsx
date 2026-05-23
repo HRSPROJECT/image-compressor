@@ -64,19 +64,18 @@ export default function Navbar() {
   ]
 
   return (
-    <header className="site-header" style={{ position: 'sticky', top: 0, zIndex: 100 }}>
+    <header className="site-header site-header-sticky">
       <nav className="site-nav" aria-label="Primary navigation">
         <Link to="/" className="brand" onClick={close}>
           <Logo />
           <span>Fileora</span>
         </Link>
 
-        <div className="nav-links" style={{ position: 'relative' }}>
+        <div className="nav-links nav-links-relative">
           <div 
-            className="dropdown-trigger"
+            className="dropdown-trigger dropdown-trigger-inline"
             onMouseEnter={() => setShowDropdown(true)}
             onMouseLeave={() => setShowDropdown(false)}
-            style={{ display: 'inline-block' }}
           >
             <a 
               className={isHome ? 'nav-link active' : 'nav-link'} 
@@ -85,30 +84,15 @@ export default function Navbar() {
                 e.preventDefault()
                 setShowDropdown(!showDropdown)
               }}
-              style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer' }}
+              className="nav-link nav-link-alltools"
             >
-              All Tools <span style={{ fontSize: '10px', transition: 'transform 0.2s', transform: showDropdown ? 'rotate(180deg)' : 'none' }}>▼</span>
+              All Tools <span className="alltools-arrow" style={{ transform: showDropdown ? 'rotate(180deg)' : 'none' }}>▼</span>
             </a>
             
             {showDropdown && (
-              <div style={{
-                position: 'absolute',
-                top: '100%',
-                left: '0',
-                background: 'var(--bg-secondary, #111827)',
-                border: '1px solid var(--border-color, #1F2937)',
-                borderRadius: '12px',
-                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4)',
-                padding: '16px',
-                display: 'grid',
-                gridTemplateColumns: '220px 220px',
-                gap: '16px',
-                zIndex: 200,
-                backdropFilter: 'blur(12px)',
-                marginTop: '4px'
-              }}>
+              <div className="dropdown-menu-premium">
                 <div>
-                  <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#6EE7B7', letterSpacing: '0.05em', marginBottom: '8px', paddingLeft: '8px' }}>IMAGE TOOLS</div>
+                  <div className="dropdown-category-title">IMAGE TOOLS</div>
                   {imageTools.map(t => (
                     <NavLink 
                       key={t.to} 
@@ -130,7 +114,7 @@ export default function Navbar() {
                   ))}
                 </div>
                 <div>
-                  <div style={{ fontSize: '11px', fontWeight: 'bold', color: '#6EE7B7', letterSpacing: '0.05em', marginBottom: '8px', paddingLeft: '8px' }}>PDF TOOLS</div>
+                  <div className="dropdown-category-title">PDF TOOLS</div>
                   {pdfTools.map(t => (
                     <NavLink 
                       key={t.to} 
@@ -173,11 +157,10 @@ export default function Navbar() {
         </div>
 
         <button
-          className="icon-button"
+          className="icon-button toggle-theme-button"
           type="button"
           onClick={toggleTheme}
           aria-label="Toggle theme"
-          style={{ background: 'transparent', color: 'var(--text-primary)', marginLeft: 'auto', marginRight: '0.5rem', padding: '0.5rem' }}
         >
           {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
         </button>
@@ -194,29 +177,104 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="mobile-drawer" style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 60px)', paddingBottom: '32px' }}>
-          <a href={toolsHref} onClick={close} style={{ fontWeight: 'bold', borderBottom: '1px solid var(--border-color)', paddingBottom: '8px' }}>All Tools</a>
+        <div className="mobile-drawer mobile-drawer-scrollable">
+          <a href={toolsHref} onClick={close} className="mobile-drawer-header">All Tools</a>
           
           <div style={{ padding: '8px 0' }}>
-            <span style={{ fontSize: '11px', fontWeight: 'bold', color: '#6EE7B7', letterSpacing: '0.05em', display: 'block', margin: '8px 0 4px 8px' }}>IMAGE TOOLS</span>
+            <span className="mobile-category-title">IMAGE TOOLS</span>
             {imageTools.map(t => (
               <NavLink key={t.to} to={t.to} onClick={close} style={{ fontSize: '14px', padding: '6px 12px', display: 'block' }}>{t.name}</NavLink>
             ))}
           </div>
 
           <div style={{ padding: '8px 0' }}>
-            <span style={{ fontSize: '11px', fontWeight: 'bold', color: '#6EE7B7', letterSpacing: '0.05em', display: 'block', margin: '8px 0 4px 8px' }}>PDF TOOLS</span>
+            <span className="mobile-category-title">PDF TOOLS</span>
             {pdfTools.map(t => (
               <NavLink key={t.to} to={t.to} onClick={close} style={{ fontSize: '14px', padding: '6px 12px', display: 'block' }}>{t.name}</NavLink>
             ))}
           </div>
 
-          <a href="https://github.com/HRSPROJECT/image-compressor" target="_blank" rel="noreferrer" onClick={close} style={{ borderTop: '1px solid var(--border-color)', marginTop: '8px', paddingTop: '12px' }}>
+          <a href="https://github.com/HRSPROJECT/image-compressor" target="_blank" rel="noreferrer" onClick={close} className="mobile-github-link">
             GitHub / Open Source
           </a>
         </div>
       )}
       <style>{`
+        .site-header-sticky {
+          position: sticky;
+          top: 0;
+          z-index: 100;
+        }
+        .nav-links-relative {
+          position: relative;
+        }
+        .dropdown-trigger-inline {
+          display: inline-block;
+        }
+        .nav-link-alltools {
+          display: flex !important;
+          align-items: center;
+          gap: 4px;
+          cursor: pointer;
+        }
+        .alltools-arrow {
+          font-size: 10px;
+          transition: transform 0.2s;
+        }
+        .dropdown-menu-premium {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: var(--bg-secondary, #111827);
+          border: 1px solid var(--border-color, #1F2937);
+          border-radius: 12px;
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+          padding: 16px;
+          display: grid;
+          grid-template-columns: 220px 220px;
+          gap: 16px;
+          z-index: 200;
+          backdrop-filter: blur(12px);
+          margin-top: 4px;
+        }
+        .dropdown-category-title {
+          font-size: 11px;
+          font-weight: bold;
+          color: #6EE7B7;
+          letter-spacing: 0.05em;
+          margin-bottom: 8px;
+          padding-left: 8px;
+        }
+        .toggle-theme-button {
+          background: transparent;
+          color: var(--text-primary);
+          margin-left: auto;
+          margin-right: 0.5rem;
+          padding: 0.5rem;
+        }
+        .mobile-drawer-scrollable {
+          overflow-y: auto;
+          max-height: calc(100vh - 60px);
+          padding-bottom: 32px;
+        }
+        .mobile-drawer-header {
+          font-weight: bold;
+          border-bottom: 1px solid var(--border-color);
+          padding-bottom: 8px;
+        }
+        .mobile-category-title {
+          font-size: 11px;
+          font-weight: bold;
+          color: #6EE7B7;
+          letter-spacing: 0.05em;
+          display: block;
+          margin: 8px 0 4px 8px;
+        }
+        .mobile-github-link {
+          border-top: 1px solid var(--border-color);
+          margin-top: 8px;
+          padding-top: 12px;
+        }
         .nav-dropdown-item:hover {
           background: var(--bg-tertiary, #1F2937);
         }

@@ -43,13 +43,16 @@ const routes = [
 async function prerender() {
   console.log('Starting pre-rendering server and browser...');
 
-  // 1. Start a local server to serve the dist folder
+  // 1. Backup the original clean index.html template and start a local server
+  const TEMPLATE_PATH = path.join(DIST_DIR, 'index-template.html');
+  fs.copyFileSync(path.join(DIST_DIR, 'index.html'), TEMPLATE_PATH);
+
   const app = express();
   app.use(express.static(DIST_DIR));
   
-  // Serve index.html for all non-file routes so client-side routing works
+  // Serve the clean index-template.html for all non-file routes so client-side routing works correctly
   app.use((req, res) => {
-    res.sendFile(path.join(DIST_DIR, 'index.html'));
+    res.sendFile(TEMPLATE_PATH);
   });
 
   const server = app.listen(PORT, async () => {
@@ -91,6 +94,9 @@ async function prerender() {
 
     await browser.close();
     server.close();
+    if (fs.existsSync(TEMPLATE_PATH)) {
+      fs.unlinkSync(TEMPLATE_PATH);
+    }
     console.log('🎉 Prerendering completed successfully!');
     process.exit(0);
   });

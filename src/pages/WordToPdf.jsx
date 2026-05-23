@@ -350,7 +350,7 @@ export default function WordToPdf() {
       <Helmet>
         <title>Convert Word to PDF Online - Free & Private | Fileora</title>
         <meta name="description" content="Convert Word DOCX files containing mathematical equations, chemical formulas, and tables to PDF online. Pure client-side privacy." />
-        <link rel="canonical" href="https://fileora.tech/word-to-pdf" />
+        <link rel="canonical" href="https://fileora.tech/word-to-pdf" data-rh="true" />
         <meta property="og:title" content="Convert Word to PDF Online - Free & Private | Fileora" />
         <meta property="og:description" content="Convert Word DOCX files containing mathematical equations, chemical formulas, and tables to PDF online. Pure client-side privacy." />
         <meta property="og:url" content="https://fileora.tech/word-to-pdf" />

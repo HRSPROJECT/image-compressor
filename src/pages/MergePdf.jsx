@@ -27,7 +27,7 @@ export default function MergePdf() {
       <Helmet>
         <title>Free PDF Merger Online — Combine PDFs | Fileora</title>
         <meta name="description" content="Merge multiple PDF files into one free. Drag to reorder. Files never leave your browser. No signup." />
-        <link rel="canonical" href="https://fileora.tech/merge-pdf" />
+        <link rel="canonical" href="https://fileora.tech/merge-pdf" data-rh="true" />
         <meta property="og:title" content="Free PDF Merger Online — Combine PDFs | Fileora" />
         <meta property="og:description" content="Merge multiple PDF files into one free. Drag to reorder. Files never leave your browser. No signup." />
         <meta property="og:url" content="https://fileora.tech/merge-pdf" />

@@ -77,7 +77,7 @@ export default function PngToPdf() {
       <Helmet>
         <title>Free PNG to PDF Converter Online | Fileora</title>
         <meta name="description" content="Convert PNG images to PDF online for free. Also supports JPG, WebP, AVIF. Combine multiple images into one PDF. Browser-based, no signup." />
-        <link rel="canonical" href="https://fileora.tech/png-to-pdf" />
+        <link rel="canonical" href="https://fileora.tech/png-to-pdf" data-rh="true" />
         <meta property="og:title" content="Free PNG to PDF Converter Online | Fileora" />
         <meta property="og:description" content="Convert PNG images to PDF online for free. Also supports JPG, WebP, AVIF. Combine multiple images into one PDF. Browser-based, no signup." />
         <meta property="og:url" content="https://fileora.tech/png-to-pdf" />

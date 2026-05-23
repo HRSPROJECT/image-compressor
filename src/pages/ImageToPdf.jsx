@@ -27,7 +27,7 @@ export default function ImageToPdf() {
       <Helmet>
         <title>Free Image to PDF Converter Online | Fileora</title>
         <meta name="description" content="Convert JPG and PNG images to PDF free. Combine multiple images into one PDF. Browser-based, no signup." />
-        <link rel="canonical" href="https://fileora.tech/image-to-pdf" />
+        <link rel="canonical" href="https://fileora.tech/image-to-pdf" data-rh="true" />
         <meta property="og:title" content="Free Image to PDF Converter Online | Fileora" />
         <meta property="og:description" content="Convert JPG and PNG images to PDF free. Combine multiple images into one PDF. Browser-based, no signup." />
         <meta property="og:url" content="https://fileora.tech/image-to-pdf" />

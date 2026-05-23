@@ -69,7 +69,7 @@ export default function IlovepdfAlternative() {
       <Helmet>
         <title>Best iLovePDF Alternative: 100% Free, Private & Offline | Fileora</title>
         <meta name="description" content="Looking for a secure iLovePDF alternative? Discover Fileora. Process PDF, Word, and images locally in your browser. No files uploaded, no limits, no signup." />
-        <link rel="canonical" href="https://fileora.tech/alternative/ilovepdf" />
+        <link rel="canonical" href="https://fileora.tech/alternative/ilovepdf" data-rh="true" />
         <meta property="og:title" content="Best iLovePDF Alternative: 100% Free, Private & Offline | Fileora" />
         <meta property="og:description" content="Stop uploading confidential files. Compress, convert, merge and split PDFs entirely inside your browser securely with Fileora. No limits." />
         <meta property="og:url" content="https://fileora.tech/alternative/ilovepdf" />

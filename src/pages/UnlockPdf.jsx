@@ -95,7 +95,7 @@ export default function UnlockPdf() {
       <Helmet>
         <title>Free PDF Password Remover — Unlock PDF Online | Fileora</title>
         <meta name="description" content="Remove password from PDF files online for free. Unlock PDF instantly in your browser. No signup, no server uploads, completely private." />
-        <link rel="canonical" href="https://fileora.tech/unlock-pdf" />
+        <link rel="canonical" href="https://fileora.tech/unlock-pdf" data-rh="true" />
         <meta property="og:title" content="Free PDF Password Remover — Unlock PDF Online | Fileora" />
         <meta property="og:description" content="Remove password from PDF files online for free. Unlock PDF instantly in your browser. No signup, no server uploads, completely private." />
         <meta property="og:url" content="https://fileora.tech/unlock-pdf" />

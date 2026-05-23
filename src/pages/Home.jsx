@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { Cpu, ShieldCheck, Zap } from 'lucide-react'
 import Navbar from '../components/shared/Navbar'
 import Footer from '../components/shared/Footer'
 import HeroSection from '../components/home/HeroSection'
@@ -13,6 +14,11 @@ const faqs = [
   { q: 'Does Fileora work on mobile?', a: 'Yes. Fileora is fully optimised for mobile browsers on Android and iOS.' },
   { q: 'Do I need to install anything?', a: 'No. Everything runs in your browser. No software to install.' },
   { q: 'What file formats does Fileora support?', a: 'JPEG, PNG, WebP, AVIF for images. PDF for document tools. More formats coming soon.' },
+  { q: 'How does local processing work?', a: "Fileora uses modern web technologies like WebAssembly, HTML5 APIs, and client-side JavaScript. Instead of sending your PDF or image files to a cloud server where they could be logged or stored, your browser processes them locally using your computer's own CPU. Once processing is complete, the file is saved directly to your Downloads folder without ever crossing the internet." },
+  { q: 'Is there a limit on file size or the number of conversions?', a: 'No, there are absolutely no file size limits or daily conversion thresholds on Fileora. Because we do not upload files to remote servers, we do not incur heavy bandwidth or cloud compute costs. This allows us to offer completely unlimited document compression, resizing, conversion, scanning, and editing tools to our users free of charge, forever.' },
+  { q: 'Why is Fileora a better alternative to cloud-based PDF tools?', a: 'Cloud-based tools like iLovePDF, Smallpdf, or CamScanner require uploading your private files to their external servers. This poses significant privacy, data compliance, and security risks, especially for sensitive legal, financial, or personal documents. Fileora runs 100% offline inside your browser sandbox, meaning your private data never leaves your physical device. It is also faster since you do not have to wait for uploads or downloads.' },
+  { q: 'Can I use Fileora without an active internet connection?', a: "Yes! Once the application is initially loaded in your browser, Fileora’s core processing engine runs entirely client-side. This means you can compress images, convert formats, split or merge PDFs, and scan documents offline without any active internet connection. It is the perfect travel companion for private offline file work." },
+  { q: 'Does Fileora store or look at my metadata?', a: 'No. We have a strict zero-data-collection policy. Fileora does not log your files, capture document metadata, or track your personal information. Everything is kept inside your browser session. The only network requests made are standard static asset fetches to load the web app, making it completely private and compliant with GDPR, HIPAA, and CCPA standards.' }
 ]
 
 const organizationSchema = {
@@ -72,15 +78,18 @@ export default function Home() {
   return (
     <div className="app-shell">
       <Helmet>
-        <title>Fileora — Free Online File Tools</title>
+        <title>Fileora — Free Online File Tools | Compress, Convert & Merge Files</title>
         <meta name="description" content="Free browser-based file tools. Compress images, resize photos, convert formats, merge PDFs. No signup, files never leave your device." />
-        <link rel="canonical" href="https://fileora.tech" />
-        <meta property="og:title" content="Fileora — Free Online File Tools" />
+        <link rel="canonical" href="https://fileora.tech" data-rh="true" />
+        <meta property="og:title" content="Fileora — Free Online File Tools | Compress, Convert & Merge Files" />
         <meta property="og:description" content="Free browser-based file tools. Privacy-first, no signup, no limits." />
         <meta property="og:url" content="https://fileora.tech" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://fileora.tech/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fileora — Free Online File Tools | Compress, Convert & Merge Files" />
+        <meta name="twitter:description" content="Free browser-based file tools. Privacy-first, no signup." />
+        <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(softwareSchema)}</script>
@@ -92,6 +101,72 @@ export default function Home() {
         <TrustBar />
         <ToolsGrid id="tools" />
         <HowItWorks />
+        
+        {/* Technical Architecture Deep-dive Section */}
+        <section className="tech-section">
+          <div className="container">
+            <div className="section-heading">
+              <p className="eyebrow">Technical Architecture</p>
+              <h2>Private, sandboxed, and near-native local performance</h2>
+              <p>Under the hood of the browser engines powering your 100% offline workflow.</p>
+            </div>
+            
+            <div className="tech-grid">
+              <div className="tech-card animate-fade-in">
+                <div className="tech-icon-wrap">
+                  <Cpu size={24} />
+                </div>
+                <h3>WebAssembly Engine</h3>
+                <p>
+                  We compile high-performance C++ and Rust libraries directly into sandboxed WebAssembly (Wasm) bytecode. This allows heavy document operations like PDF encryption, image compression, and character recognition to execute locally at near-native CPU speeds inside your browser.
+                </p>
+              </div>
+
+              <div className="tech-card animate-fade-in">
+                <div className="tech-icon-wrap">
+                  <Zap size={24} />
+                </div>
+                <h3>Zero Upload Latency</h3>
+                <p>
+                  Traditional file tools waste precious time uploading multi-megabyte files to a distant cloud server and then waiting to download the completed result. Fileora reads your files directly from your physical drive into browser memory, delivering instantaneous, lag-free processing.
+                </p>
+              </div>
+
+              <div className="tech-card animate-fade-in">
+                <div className="tech-icon-wrap">
+                  <ShieldCheck size={24} />
+                </div>
+                <h3>In-Browser Sandboxing</h3>
+                <p>
+                  Every operation runs inside your browser's native security sandbox. By eliminating network uploads entirely, your files are immune to interception, data breaches, or cloud logging. Once you close the tab, all loaded document memory is immediately freed.
+                </p>
+              </div>
+            </div>
+
+            {/* Sovereign Data Privacy Section */}
+            <div className="security-compliance-box">
+              <h3>Sovereign Data Privacy & Regulatory Compliance</h3>
+              <p>
+                Because Fileora executes 100% client-side, we possess zero access to your files, documents, metadata, or personal identities. This architectural design makes our toolkit immediately compliant with strict international data residency regulations.
+              </p>
+              <div className="compliance-grid">
+                <div className="compliance-item">
+                  <ShieldCheck size={20} />
+                  <span>GDPR Aligned</span>
+                </div>
+                <div className="compliance-item">
+                  <ShieldCheck size={20} />
+                  <span>HIPAA Compliant</span>
+                </div>
+                <div className="compliance-item">
+                  <ShieldCheck size={20} />
+                  <span>CCPA Protected</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <FaqSection faqs={faqs} />
       </main>
       <Footer />

@@ -129,7 +129,7 @@ export default function ResizePdf() {
       <Helmet>
         <title>Free PDF Resizer Online — Resize PDF Page Size | Fileora</title>
         <meta name="description" content="Resize PDF pages online for free. Change PDF page size to A4, Letter, A3 and more. Browser-based, no signup required." />
-        <link rel="canonical" href="https://fileora.tech/resize-pdf" />
+        <link rel="canonical" href="https://fileora.tech/resize-pdf" data-rh="true" />
         <meta property="og:title" content="Free PDF Resizer Online — Resize PDF Page Size | Fileora" />
         <meta property="og:description" content="Resize PDF pages online for free. Change PDF page size to A4, Letter, A3 and more. Browser-based, no signup required." />
         <meta property="og:url" content="https://fileora.tech/resize-pdf" />

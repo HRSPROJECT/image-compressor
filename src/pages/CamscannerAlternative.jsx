@@ -69,7 +69,7 @@ export default function CamscannerAlternative() {
       <Helmet>
         <title>Best Free CamScanner Alternative: 100% Secure & Online | Fileora</title>
         <meta name="description" content="Looking for a secure, ad-free CamScanner alternative? Scan documents securely in your browser with Fileora. Absolute privacy, automatic cropping, no watermarks." />
-        <link rel="canonical" href="https://fileora.tech/alternative/camscanner" />
+        <link rel="canonical" href="https://fileora.tech/alternative/camscanner" data-rh="true" />
         <meta property="og:title" content="Best Free CamScanner Alternative: 100% Secure & Online | Fileora" />
         <meta property="og:description" content="Protect your personal data. Convert physical documents to optimized PDF scans directly in your browser. Automatic crop borders, perspective grids, no watermarks." />
         <meta property="og:url" content="https://fileora.tech/alternative/camscanner" />

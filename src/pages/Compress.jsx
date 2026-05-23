@@ -47,7 +47,7 @@ export default function Compress() {
       <Helmet>
         <title>Free Image Compressor Online — JPEG PNG WebP | Fileora</title>
         <meta name="description" content="Compress JPEG, PNG, WebP and AVIF images online for free. Reduce file size up to 90% without losing quality. No signup, browser-based." />
-        <link rel="canonical" href="https://fileora.tech/compress" />
+        <link rel="canonical" href="https://fileora.tech/compress" data-rh="true" />
         <meta property="og:title" content="Free Image Compressor Online — JPEG PNG WebP | Fileora" />
         <meta property="og:description" content="Compress JPEG, PNG, WebP and AVIF images online for free. Reduce file size up to 90% without losing quality. No signup, browser-based." />
         <meta property="og:url" content="https://fileora.tech/compress" />

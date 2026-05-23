@@ -232,7 +232,7 @@ export default function PdfToJpg() {
       <Helmet>
         <title>Convert PDF to JPG Online - High Quality Free | Fileora</title>
         <meta name="description" content="Convert PDF to JPG online for free. Extract images or render PDF pages as high-resolution JPG or PNG. 100% browser-based, private, and unlimited." />
-        <link rel="canonical" href="https://fileora.tech/pdf-to-jpg" />
+        <link rel="canonical" href="https://fileora.tech/pdf-to-jpg" data-rh="true" />
         <meta property="og:title" content="Convert PDF to JPG Online - High Quality Free | Fileora" />
         <meta property="og:description" content="Convert PDF to JPG online for free. Extract images or render PDF pages as high-resolution JPG or PNG. 100% browser-based, private, and unlimited." />
         <meta property="og:url" content="https://fileora.tech/pdf-to-jpg" />

@@ -117,7 +117,7 @@ export default function CropPdf() {
       <Helmet>
         <title>Free PDF Cropper Online — Crop PDF Pages | Fileora</title>
         <meta name="description" content="Crop PDF pages online for free. Remove margins, crop to custom size. Browser-based, no signup." />
-        <link rel="canonical" href="https://fileora.tech/crop-pdf" />
+        <link rel="canonical" href="https://fileora.tech/crop-pdf" data-rh="true" />
         <meta property="og:title" content="Free PDF Cropper Online — Crop PDF Pages | Fileora" />
         <meta property="og:description" content="Crop PDF pages online for free. Remove margins, crop to custom size. Browser-based, no signup." />
         <meta property="og:url" content="https://fileora.tech/crop-pdf" />

@@ -268,7 +268,7 @@ export default function NumberPdf() {
       <Helmet>
         <title>Add Page Numbers to PDF Online - Free & Private | Fileora</title>
         <meta name="description" content="Add page numbers to PDF files online for free. Exclude cover sheet, start from any page, customize numbering formats, placement coordinates, sizing, and colors." />
-        <link rel="canonical" href="https://fileora.tech/number-pdf" />
+        <link rel="canonical" href="https://fileora.tech/number-pdf" data-rh="true" />
         <meta property="og:title" content="Add Page Numbers to PDF Online - Free & Private | Fileora" />
         <meta property="og:description" content="Add page numbers to PDF files online for free. Exclude cover sheet, start from any page, customize numbering formats, placement coordinates, sizing, and colors." />
         <meta property="og:url" content="https://fileora.tech/number-pdf" />

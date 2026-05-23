@@ -138,7 +138,7 @@ export default function ProtectPdf() {
       <Helmet>
         <title>Protect PDF - Add Password & Lock PDF Online | Fileora</title>
         <meta name="description" content="Secure your PDF files for free online. Set opening passwords, edit lock codes, copy-protection, and printing blocks locally in your browser." />
-        <link rel="canonical" href="https://fileora.tech/protect-pdf" />
+        <link rel="canonical" href="https://fileora.tech/protect-pdf" data-rh="true" />
         <meta property="og:title" content="Protect PDF - Add Password & Lock PDF Online | Fileora" />
         <meta property="og:description" content="Secure your PDF files for free online. Set opening passwords, edit lock codes, copy-protection, and printing blocks locally in your browser." />
         <meta property="og:url" content="https://fileora.tech/protect-pdf" />

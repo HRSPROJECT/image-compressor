@@ -27,7 +27,7 @@ export default function Convert() {
       <Helmet>
         <title>Free Image Converter — JPG to PNG WebP AVIF | Fileora</title>
         <meta name="description" content="Convert images between JPG, PNG, WebP and AVIF online for free. Instant browser-based conversion. No signup." />
-        <link rel="canonical" href="https://fileora.tech/convert" />
+        <link rel="canonical" href="https://fileora.tech/convert" data-rh="true" />
         <meta property="og:title" content="Free Image Converter — JPG to PNG WebP AVIF | Fileora" />
         <meta property="og:description" content="Convert images between JPG, PNG, WebP and AVIF online for free. Instant browser-based conversion. No signup." />
         <meta property="og:url" content="https://fileora.tech/convert" />

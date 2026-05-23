@@ -141,7 +141,7 @@ export default function HeicToJpg() {
       <Helmet>
         <title>Convert HEIC to JPG Online - 100% Free & Private | Fileora</title>
         <meta name="description" content="Convert iPhone HEIC photos to JPG, PNG, or WebP online for free. Support batch upload. 100% private local browser rendering. No signups." />
-        <link rel="canonical" href="https://fileora.tech/heic-to-jpg" />
+        <link rel="canonical" href="https://fileora.tech/heic-to-jpg" data-rh="true" />
         <meta property="og:title" content="Convert HEIC to JPG Online - 100% Free & Private | Fileora" />
         <meta property="og:description" content="Convert iPhone HEIC photos to JPG, PNG, or WebP online for free. Support batch upload. 100% private local browser rendering. No signups." />
         <meta property="og:url" content="https://fileora.tech/heic-to-jpg" />

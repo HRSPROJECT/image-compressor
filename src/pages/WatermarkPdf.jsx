@@ -330,7 +330,7 @@ export default function WatermarkPdf() {
       <Helmet>
         <title>Add Watermark to PDF Online - Free & Private | Fileora</title>
         <meta name="description" content="Add text or image watermarks to PDF files online for free. Custom placement, opacity, rotation, colors, and sizing. Fast client-side stamp technology." />
-        <link rel="canonical" href="https://fileora.tech/watermark-pdf" />
+        <link rel="canonical" href="https://fileora.tech/watermark-pdf" data-rh="true" />
         <meta property="og:title" content="Add Watermark to PDF Online - Free & Private | Fileora" />
         <meta property="og:description" content="Add text or image watermarks to PDF files online for free. Custom placement, opacity, rotation, colors, and sizing. Fast client-side stamp technology." />
         <meta property="og:url" content="https://fileora.tech/watermark-pdf" />

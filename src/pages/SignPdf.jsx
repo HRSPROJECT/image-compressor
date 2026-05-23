@@ -370,7 +370,7 @@ export default function SignPdf() {
       <Helmet>
         <title>Sign PDF Online - Draw or Type PDF Signatures | Fileora</title>
         <meta name="description" content="Sign PDF files online for free. Type standard cursive signatures, draw smooth custom signatures, or upload transparent image PNG stamps. Drag-resizable layout." />
-        <link rel="canonical" href="https://fileora.tech/sign-pdf" />
+        <link rel="canonical" href="https://fileora.tech/sign-pdf" data-rh="true" />
         <meta property="og:title" content="Sign PDF Online - Draw or Type PDF Signatures | Fileora" />
         <meta property="og:description" content="Sign PDF files online for free. Type standard cursive signatures, draw smooth custom signatures, or upload transparent image PNG stamps. Drag-resizable layout." />
         <meta property="og:url" content="https://fileora.tech/sign-pdf" />

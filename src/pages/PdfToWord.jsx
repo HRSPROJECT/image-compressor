@@ -509,7 +509,7 @@ export default function PdfToWord() {
       <Helmet>
         <title>Convert PDF to Word Online - Free & Editable | Fileora</title>
         <meta name="description" content="Convert PDF documents into editable Word Docx files online for free. Pure client-side privacy with no uploads. Instant, safe, and professional text conversion." />
-        <link rel="canonical" href="https://fileora.tech/pdf-to-word" />
+        <link rel="canonical" href="https://fileora.tech/pdf-to-word" data-rh="true" />
         <meta property="og:title" content="Convert PDF to Word Online - Free & Editable | Fileora" />
         <meta property="og:description" content="Convert PDF documents into editable Word Docx files online for free. Pure client-side privacy with no uploads. Instant, safe, and professional text conversion." />
         <meta property="og:url" content="https://fileora.tech/pdf-to-word" />

@@ -121,7 +121,7 @@ export default function SplitPdf() {
       <Helmet>
         <title>Free PDF Splitter Online — Split PDF, Remove Pages | Fileora</title>
         <meta name="description" content="Split PDF files online for free. Extract pages, split by range, or remove specific pages. Browser-based, no signup, files never uploaded to server." />
-        <link rel="canonical" href="https://fileora.tech/split-pdf" />
+        <link rel="canonical" href="https://fileora.tech/split-pdf" data-rh="true" />
         <meta property="og:title" content="Free PDF Splitter Online — Split PDF, Remove Pages | Fileora" />
         <meta property="og:description" content="Split PDF files online for free. Extract pages, split by range, or remove specific pages. Browser-based, no signup, files never uploaded to server." />
         <meta property="og:url" content="https://fileora.tech/split-pdf" />
