@@ -6,7 +6,7 @@ export default function HeroSection() {
     <section className="hero-section">
       <div className="container hero-inner">
         <p className="eyebrow">Fileora for file work that stays yours</p>
-        <h1>Your privacy-first file toolkit</h1>
+        <h1>Fileora — Secure Browser Tools for PDF, Image &amp; Video Files</h1>
         <p className="hero-copy">
           Professional-grade tools that run entirely in your browser. No signup, no uploads, no limits.
         </p>

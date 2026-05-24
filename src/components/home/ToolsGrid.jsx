@@ -8,7 +8,6 @@ const tools = [
     icon: <FileArchive size={25} />,
     title: 'Image Compressor',
     description: 'Shrink JPEG, PNG, WebP and AVIF files with a live comparison view.',
-    badge: 'Live',
     formats: 'JPEG · PNG · WebP · AVIF',
   },
   {
@@ -16,7 +15,6 @@ const tools = [
     icon: <Maximize2 size={25} />,
     title: 'Image Resizer',
     description: 'Resize photos with presets for WhatsApp, Instagram, passport photos and more.',
-    badge: 'Live',
     formats: 'JPG · PNG · WebP',
   },
   {
@@ -24,7 +22,6 @@ const tools = [
     icon: <Repeat2 size={25} />,
     title: 'Image Converter',
     description: 'Convert images between JPG, PNG, WebP and AVIF directly in the browser.',
-    badge: 'Live',
     formats: 'JPG · PNG · WebP · AVIF',
   },
   {
@@ -32,7 +29,6 @@ const tools = [
     icon: <FilePlus2 size={25} />,
     title: 'Image to PDF',
     description: 'Combine one or more images into a clean PDF with page and margin controls.',
-    badge: 'Live',
     formats: 'JPG · PNG · WebP',
   },
   {
@@ -40,7 +36,6 @@ const tools = [
     icon: <ImageIcon size={25} />,
     title: 'PNG to PDF',
     description: 'Convert PNG images to PDF online for free in your browser.',
-    badge: 'Live',
     formats: 'PNG',
   },
   {
@@ -48,7 +43,6 @@ const tools = [
     icon: <FileImage size={25} />,
     title: 'Merge PDF',
     description: 'Merge PDFs in your chosen order with exact page copying and no upload step.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {
@@ -56,7 +50,6 @@ const tools = [
     icon: <FileDown size={25} />,
     title: 'PDF Compressor',
     description: 'Reduce PDF file size to 100KB, 200KB or 500KB in your browser.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {
@@ -64,7 +57,6 @@ const tools = [
     icon: <Scissors size={25} />,
     title: 'Split PDF',
     description: 'Split PDF pages by range, extract specific pages, or remove pages.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {
@@ -72,7 +64,6 @@ const tools = [
     icon: <FileLock size={25} />,
     title: 'Unlock PDF',
     description: 'Remove password and protection from your PDF files online.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {
@@ -80,7 +71,6 @@ const tools = [
     icon: <Scale size={25} />,
     title: 'Resize PDF',
     description: 'Change PDF page size to A4, Letter, A3 and more instantly.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {
@@ -88,7 +78,6 @@ const tools = [
     icon: <Crop size={25} />,
     title: 'Crop PDF',
     description: 'Crop margins and define custom boundaries on PDF pages.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {
@@ -96,7 +85,6 @@ const tools = [
     icon: <FileText size={25} />,
     title: 'PDF to Word',
     description: 'Convert PDF files to editable Word documents.',
-    badge: 'Live',
     formats: 'PDF → DOCX',
   },
   {
@@ -104,7 +92,6 @@ const tools = [
     icon: <FileText size={25} />,
     title: 'Word to PDF',
     description: 'Convert Word DOCX files to clean PDF files.',
-    badge: 'Live',
     formats: 'DOCX → PDF',
   },
   {
@@ -112,7 +99,6 @@ const tools = [
     icon: <ArrowLeftRight size={25} />,
     title: 'PDF to JPG',
     description: 'Extract pages or render whole PDF pages as high-quality JPEGs.',
-    badge: 'Live',
     formats: 'PDF → JPG · PNG',
   },
   {
@@ -120,7 +106,6 @@ const tools = [
     icon: <Repeat2 size={25} />,
     title: 'HEIC to JPG',
     description: 'Convert iPhone HEIC photos to compatible JPG, PNG or WebP formats.',
-    badge: 'Live',
     formats: 'HEIC → JPG · PNG · WebP',
   },
   {
@@ -128,7 +113,6 @@ const tools = [
     icon: <ImageIcon size={25} />,
     title: 'JPG to PDF',
     description: 'Convert and merge JPG and WebP images into clean, stylized PDFs.',
-    badge: 'Live',
     formats: 'JPG · JPEG · WebP → PDF',
   },
   {
@@ -136,7 +120,6 @@ const tools = [
     icon: <RotateCw size={25} />,
     title: 'Rotate PDF',
     description: 'Rotate individual or all PDF pages clockwise or counterclockwise.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {
@@ -144,7 +127,6 @@ const tools = [
     icon: <Type size={25} />,
     title: 'Watermark PDF',
     description: 'Stamp highly custom text or image watermarks onto PDF pages securely.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {
@@ -152,7 +134,6 @@ const tools = [
     icon: <Hash size={25} />,
     title: 'Add Page Numbers',
     description: 'Add standard page numbering indices with multiple coordinate layouts.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {
@@ -160,7 +141,6 @@ const tools = [
     icon: <Contact size={25} />,
     title: 'Passport Photo',
     description: 'Crop and scale photos to standard passport size templates.',
-    badge: 'Live',
     formats: 'JPG · PNG',
   },
   {
@@ -168,7 +148,6 @@ const tools = [
     icon: <Shield size={25} />,
     title: 'Protect PDF',
     description: 'Encrypt PDF documents and restrict formatting or editing privileges.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {
@@ -176,7 +155,6 @@ const tools = [
     icon: <PenTool size={25} />,
     title: 'Sign PDF',
     description: 'Type cursive typography or draw anti-aliased digital signatures on PDF pages.',
-    badge: 'Live',
     formats: 'PDF',
   },
   {

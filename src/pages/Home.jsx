@@ -78,17 +78,17 @@ export default function Home() {
   return (
     <div className="app-shell">
       <Helmet>
-        <title>Fileora — Free Online File Tools | Compress &amp; Convert Files</title>
-        <meta name="description" content="Free browser-based file tools. Compress images, resize photos, convert formats, merge PDFs. No signup, files never leave your device." />
-        <link rel="canonical" href="https://fileora.tech" data-rh="true" />
-        <meta property="og:title" content="Fileora — Free Online File Tools | Compress &amp; Convert Files" />
-        <meta property="og:description" content="Free browser-based file tools. Privacy-first, no signup, no limits." />
-        <meta property="og:url" content="https://fileora.tech" />
+        <title>Fileora — PDF, Image &amp; Video Browser Tools | Compress &amp; Convert JPG, PNG, PDF Files</title>
+        <meta name="description" content="Free private browser tools by Fileora. Convert &amp; compress PDF, JPG, PNG images or edit MP4, MOV, WebM video files 100% locally in your browser without uploading." />
+        <link rel="canonical" href="https://fileora.tech/" data-rh="true" />
+        <meta property="og:title" content="Fileora — PDF, Image &amp; Video Browser Tools | Compress &amp; Convert JPG, PNG, PDF Files" />
+        <meta property="og:description" content="Free private browser tools by Fileora. Convert &amp; compress PDF, JPG, PNG images or edit MP4, MOV, WebM video files 100% locally in your browser without uploading." />
+        <meta property="og:url" content="https://fileora.tech/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://fileora.tech/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Fileora — Free Online File Tools | Compress &amp; Convert Files" />
-        <meta name="twitter:description" content="Free browser-based file tools. Privacy-first, no signup." />
+        <meta name="twitter:title" content="Fileora — PDF, Image &amp; Video Browser Tools | Compress &amp; Convert JPG, PNG, PDF Files" />
+        <meta name="twitter:description" content="Free private browser tools by Fileora. Convert &amp; compress PDF, JPG, PNG images or edit MP4, MOV, WebM video files 100% locally in your browser without uploading." />
         <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
