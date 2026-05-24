@@ -78,17 +78,17 @@ export default function Home() {
   return (
     <div className="app-shell">
       <Helmet>
-        <title>Fileora — PDF, Image &amp; Video Browser Tools | Compress &amp; Convert JPG, PNG, PDF Files</title>
-        <meta name="description" content="Free private browser tools by Fileora. Convert &amp; compress PDF, JPG, PNG images or edit MP4, MOV, WebM video files 100% locally in your browser without uploading." />
+        <title>Fileora - Browser Tools for PDF, Video, JPG, PNG Files</title>
+        <meta name="description" content="Free private browser tools by Fileora. Convert &amp; compress PDF, JPG, PNG images or edit MP4, MOV, WebM video files locally in your browser without uploading." />
         <link rel="canonical" href="https://fileora.tech/" data-rh="true" />
-        <meta property="og:title" content="Fileora — PDF, Image &amp; Video Browser Tools | Compress &amp; Convert JPG, PNG, PDF Files" />
-        <meta property="og:description" content="Free private browser tools by Fileora. Convert &amp; compress PDF, JPG, PNG images or edit MP4, MOV, WebM video files 100% locally in your browser without uploading." />
+        <meta property="og:title" content="Fileora - Browser Tools for PDF, Video, JPG, PNG Files" />
+        <meta property="og:description" content="Free private browser tools by Fileora. Convert &amp; compress PDF, JPG, PNG images or edit MP4, MOV, WebM video files locally in your browser without uploading." />
         <meta property="og:url" content="https://fileora.tech/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://fileora.tech/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Fileora — PDF, Image &amp; Video Browser Tools | Compress &amp; Convert JPG, PNG, PDF Files" />
-        <meta name="twitter:description" content="Free private browser tools by Fileora. Convert &amp; compress PDF, JPG, PNG images or edit MP4, MOV, WebM video files 100% locally in your browser without uploading." />
+        <meta name="twitter:title" content="Fileora - Browser Tools for PDF, Video, JPG, PNG Files" />
+        <meta name="twitter:description" content="Free private browser tools by Fileora. Convert &amp; compress PDF, JPG, PNG images or edit MP4, MOV, WebM video files locally in your browser without uploading." />
         <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
