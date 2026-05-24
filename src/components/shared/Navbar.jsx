@@ -263,10 +263,11 @@ export default function Navbar() {
         }
         .mobile-nav-link {
           font-size: 14px;
-          padding: 6px 12px;
+          padding: 12px 16px;
           display: block;
           color: var(--text-primary);
           text-decoration: none;
+          min-height: 48px;
         }
         .dropdown-menu-premium {
           position: absolute;
@@ -307,7 +308,9 @@ export default function Navbar() {
         .mobile-drawer-header {
           font-weight: bold;
           border-bottom: 1px solid var(--border-color);
-          padding-bottom: 8px;
+          padding: 12px 16px;
+          display: block;
+          min-height: 48px;
         }
         .mobile-category-title {
           font-size: 11px;
@@ -320,15 +323,18 @@ export default function Navbar() {
         .mobile-github-link {
           border-top: 1px solid var(--border-color);
           margin-top: 8px;
-          padding-top: 12px;
+          padding: 12px 16px;
+          display: block;
+          min-height: 48px;
         }
         .mobile-ph-link {
           margin-top: 4px;
-          padding-top: 8px;
+          padding: 12px 16px;
           display: block;
           color: var(--text-secondary);
           text-decoration: none;
           font-size: 14px;
+          min-height: 48px;
         }
         .nav-dropdown-item:hover {
           background: var(--bg-tertiary, #1F2937);

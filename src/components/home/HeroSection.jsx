@@ -32,6 +32,8 @@ export default function HeroSection() {
               alt="Fileora — Free Online File Tools - Free file tools that run entirely in your browser  | Product Hunt" 
               width="250" 
               height="54" 
+              loading="lazy"
+              decoding="async"
             />
           </a>
         </div>
