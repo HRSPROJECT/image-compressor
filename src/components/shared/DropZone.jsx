@@ -45,7 +45,7 @@ export default function DropZone({
       )}
       <strong>Drop files here or tap to browse</strong>
       <span>{helpText}</span>
-      <small>Accepted: {accept || 'any'} · Limit: {maxSizeLabel}</small>
+      <small>Accepted: {accept || 'any'}{maxSizeLabel ? ` · Limit: ${maxSizeLabel}` : ''}</small>
       {error && <p className="error-message">{error}</p>}
       <input
         ref={inputRef}

@@ -29,6 +29,16 @@ export default function Footer() {
     ['Passport Photo', '/passport-photo'],
   ]
 
+  const videoLinks = [
+    ['MOV to MP4', '/mov-to-mp4'],
+    ['Video Compressor', '/compress-video'],
+    ['MP4 to MP3', '/mp4-to-mp3'],
+    ['Trim Video', '/trim-video'],
+    ['Merge Video', '/merge-video'],
+    ['MOV to MP3', '/mov-to-mp3'],
+    ['Video Repeater', '/repeat-video'],
+  ]
+
   const scannerLinks = [
     ['AI Document Scanner', '/scanner'],
   ]
@@ -68,6 +78,16 @@ export default function Footer() {
             <h4 className="footer-col-title">Image Utilities</h4>
             <div className="footer-col-links">
               {imageLinks.map(([label, href]) => (
+                <Link key={href} to={href} className="footer-nav-link footer-nav-link-base">{label}</Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Video Column */}
+          <div>
+            <h4 className="footer-col-title">Video Utilities</h4>
+            <div className="footer-col-links">
+              {videoLinks.map(([label, href]) => (
                 <Link key={href} to={href} className="footer-nav-link footer-nav-link-base">{label}</Link>
               ))}
             </div>

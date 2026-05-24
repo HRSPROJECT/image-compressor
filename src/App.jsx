@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './context/ThemeContext'
 
-// Eagerly load Home and Compress (most visited pages)
+// Eagerly load Home (most visited page)
 import Home from './pages/Home'
-import Compress from './pages/Compress'
 
 // Lazily load PDF/image tools to improve page load speed
+const Compress = React.lazy(() => import('./pages/Compress'))
 const Resize = React.lazy(() => import('./pages/Resize'))
 const Convert = React.lazy(() => import('./pages/Convert'))
 const ImageToPdf = React.lazy(() => import('./pages/ImageToPdf'))
@@ -30,6 +30,15 @@ const SignPdf = React.lazy(() => import('./pages/SignPdf'))
 const PdfToWord = React.lazy(() => import('./pages/PdfToWord'))
 const WordToPdf = React.lazy(() => import('./pages/WordToPdf'))
 const Scanner = React.lazy(() => import('./pages/Scanner'))
+
+// Lazily load high-performance video utilities
+const MovToMp4 = React.lazy(() => import('./pages/MovToMp4'))
+const CompressVideo = React.lazy(() => import('./pages/CompressVideo'))
+const Mp4ToMp3 = React.lazy(() => import('./pages/Mp4ToMp3'))
+const TrimVideo = React.lazy(() => import('./pages/TrimVideo'))
+const MergeVideo = React.lazy(() => import('./pages/MergeVideo'))
+const MovToMp3 = React.lazy(() => import('./pages/MovToMp3'))
+const RepeatVideo = React.lazy(() => import('./pages/RepeatVideo'))
 
 // Lazy-loaded competitor comparison alternative pages
 const IlovepdfAlternative = React.lazy(() => import('./pages/IlovepdfAlternative'))
@@ -86,6 +95,15 @@ export default function App() {
               <Route path="/pdf-to-word" element={<PdfToWord />} />
               <Route path="/word-to-pdf" element={<WordToPdf />} />
               <Route path="/scanner" element={<Scanner />} />
+              
+              {/* Dynamic Offline Video Processing Routes */}
+              <Route path="/mov-to-mp4" element={<MovToMp4 />} />
+              <Route path="/compress-video" element={<CompressVideo />} />
+              <Route path="/mp4-to-mp3" element={<Mp4ToMp3 />} />
+              <Route path="/trim-video" element={<TrimVideo />} />
+              <Route path="/merge-video" element={<MergeVideo />} />
+              <Route path="/mov-to-mp3" element={<MovToMp3 />} />
+              <Route path="/repeat-video" element={<RepeatVideo />} />
               
               {/* Competitor Alternative Comparison Routes */}
               <Route path="/alternative/ilovepdf" element={<IlovepdfAlternative />} />

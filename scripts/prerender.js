@@ -35,6 +35,13 @@ const routes = [
   '/pdf-to-word',
   '/word-to-pdf',
   '/scanner',
+  '/mov-to-mp4',
+  '/compress-video',
+  '/mp4-to-mp3',
+  '/trim-video',
+  '/merge-video',
+  '/mov-to-mp3',
+  '/repeat-video',
   '/alternative/ilovepdf',
   '/alternative/smallpdf',
   '/alternative/camscanner'
@@ -78,15 +85,22 @@ async function prerender() {
         // Get the full HTML
         const html = await page.content();
 
-        // Determine output target directory in dist
-        const routeDir = path.join(DIST_DIR, route === '/' ? '' : route);
-        if (!fs.existsSync(routeDir)) {
-          fs.mkdirSync(routeDir, { recursive: true });
+        // Determine output target path in dist
+        let outputPath;
+        if (route === '/') {
+          outputPath = path.join(DIST_DIR, 'index.html');
+        } else {
+          // If the route has subfolders (e.g. /alternative/ilovepdf), ensure parent folder exists
+          const parentDir = path.dirname(path.join(DIST_DIR, route));
+          if (!fs.existsSync(parentDir)) {
+            fs.mkdirSync(parentDir, { recursive: true });
+          }
+          outputPath = path.join(DIST_DIR, `${route}.html`);
         }
 
-        // Write to index.html inside the route directory
-        fs.writeFileSync(path.join(routeDir, 'index.html'), html);
-        console.log(`✅ Successfully saved prerendered HTML to: ${path.join(routeDir, 'index.html')}`);
+        // Write the prerendered HTML file
+        fs.writeFileSync(outputPath, html);
+        console.log(`✅ Successfully saved prerendered HTML to: ${outputPath}`);
       } catch (error) {
         console.error(`❌ Failed to prerender route ${route}:`, error);
       }

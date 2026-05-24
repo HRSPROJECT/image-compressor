@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FileArchive, FileImage, FilePlus2, ImageIcon, Maximize2, Repeat2, FileDown, Scissors, FileLock, Scale, Crop, FileText, ArrowLeftRight, Contact, RotateCw, Type, Hash, Shield, PenTool, Sparkles, Search, X, Camera } from 'lucide-react'
+import { FileArchive, FileImage, FilePlus2, ImageIcon, Maximize2, Repeat2, FileDown, Scissors, FileLock, Scale, Crop, FileText, ArrowLeftRight, Contact, RotateCw, Type, Hash, Shield, PenTool, Sparkles, Search, X, Camera, Video, Music, Layers } from 'lucide-react'
 import ToolCard from '../shared/ToolCard'
 
 const tools = [
@@ -186,6 +186,62 @@ const tools = [
     description: 'Scan documents using your webcam or photos. Features automatic quadrilateral crop detection, perspective alignment, and high contrast B&W filters.',
     badge: 'New',
     formats: 'Webcam · JPG · PNG → PDF',
+  },
+  {
+    href: '/mov-to-mp4',
+    icon: <Video size={25} />,
+    title: 'MOV to MP4',
+    description: 'Convert Apple QuickTime MOV video containers to universal MP4 format locally.',
+    badge: 'New',
+    formats: 'MOV → MP4',
+  },
+  {
+    href: '/compress-video',
+    icon: <FileDown size={25} />,
+    title: 'Video Compressor',
+    description: 'Reduce video file size by adjusting bitrate quality and scaling dimensions locally.',
+    badge: 'New',
+    formats: 'MP4 · MOV · WebM',
+  },
+  {
+    href: '/mp4-to-mp3',
+    icon: <Music size={25} />,
+    title: 'MP4 to MP3',
+    description: 'Extract high-fidelity MP3 audio tracks from video files securely in your browser.',
+    badge: 'New',
+    formats: 'Video → MP3',
+  },
+  {
+    href: '/trim-video',
+    icon: <Scissors size={25} />,
+    title: 'Trim Video',
+    description: 'Precise frame-by-frame timeline cutter and slicer for video clips.',
+    badge: 'New',
+    formats: 'MP4 · MOV · WebM',
+  },
+  {
+    href: '/merge-video',
+    icon: <Layers size={25} />,
+    title: 'Merge Video',
+    description: 'Combine and stitch multiple video clips together locally with aspect ratio alignment.',
+    badge: 'New',
+    formats: 'MP4 · MOV · WebM',
+  },
+  {
+    href: '/mov-to-mp3',
+    icon: <Music size={25} />,
+    title: 'MOV to MP3',
+    description: 'Extract high-quality MP3 audio tracks directly from Apple MOV video captures.',
+    badge: 'New',
+    formats: 'MOV → MP3',
+  },
+  {
+    href: '/repeat-video',
+    icon: <Repeat2 size={25} />,
+    title: 'Video Repeater',
+    description: 'Repeat a video multiple times and combine them into a single looped video.',
+    badge: 'New',
+    formats: 'MP4 · MOV · WebM',
   },
 ]
 // Helper for standard Levenshtein distance between two strings

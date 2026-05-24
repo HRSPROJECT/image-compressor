@@ -63,6 +63,16 @@ export default function Navbar() {
     { name: 'Word to PDF', to: '/word-to-pdf' },
   ]
 
+  const videoTools = [
+    { name: 'MOV to MP4', to: '/mov-to-mp4' },
+    { name: 'Video Compressor', to: '/compress-video' },
+    { name: 'MP4 to MP3', to: '/mp4-to-mp3' },
+    { name: 'Trim Video', to: '/trim-video' },
+    { name: 'Merge Video', to: '/merge-video' },
+    { name: 'MOV to MP3', to: '/mov-to-mp3' },
+    { name: 'Video Repeater', to: '/repeat-video' },
+  ]
+
   return (
     <header className="site-header site-header-sticky">
       <nav className="site-nav" aria-label="Primary navigation">
@@ -78,15 +88,14 @@ export default function Navbar() {
             onMouseLeave={() => setShowDropdown(false)}
           >
             <a 
-              className={isHome ? 'nav-link active' : 'nav-link'} 
+              className={`nav-link nav-link-alltools ${isHome ? 'active' : ''}`}
               href={toolsHref}
               onClick={(e) => {
                 e.preventDefault()
                 setShowDropdown(!showDropdown)
               }}
-              className="nav-link nav-link-alltools"
             >
-              All Tools <span className="alltools-arrow" style={{ transform: showDropdown ? 'rotate(180deg)' : 'none' }}>▼</span>
+              All Tools <span className={`alltools-arrow ${showDropdown ? 'rotate' : ''}`}>▼</span>
             </a>
             
             {showDropdown && (
@@ -98,16 +107,7 @@ export default function Navbar() {
                       key={t.to} 
                       to={t.to} 
                       onClick={close}
-                      style={({ isActive }) => ({
-                        display: 'block',
-                        padding: '8px 12px',
-                        borderRadius: '6px',
-                        color: isActive ? '#6EE7B7' : 'var(--text-primary)',
-                        textDecoration: 'none',
-                        fontSize: '13px',
-                        transition: 'background 0.2s'
-                      })}
-                      className="nav-dropdown-item"
+                      className={({ isActive }) => `nav-dropdown-item${isActive ? ' active' : ''}`}
                     >
                       {t.name}
                     </NavLink>
@@ -120,16 +120,20 @@ export default function Navbar() {
                       key={t.to} 
                       to={t.to} 
                       onClick={close}
-                      style={({ isActive }) => ({
-                        display: 'block',
-                        padding: '8px 12px',
-                        borderRadius: '6px',
-                        color: isActive ? '#6EE7B7' : 'var(--text-primary)',
-                        textDecoration: 'none',
-                        fontSize: '13px',
-                        transition: 'background 0.2s'
-                      })}
-                      className="nav-dropdown-item"
+                      className={({ isActive }) => `nav-dropdown-item${isActive ? ' active' : ''}`}
+                    >
+                      {t.name}
+                    </NavLink>
+                  ))}
+                </div>
+                <div>
+                  <div className="dropdown-category-title">VIDEO TOOLS</div>
+                  {videoTools.map(t => (
+                    <NavLink 
+                      key={t.to} 
+                      to={t.to} 
+                      onClick={close}
+                      className={({ isActive }) => `nav-dropdown-item${isActive ? ' active' : ''}`}
                     >
                       {t.name}
                     </NavLink>
@@ -188,17 +192,24 @@ export default function Navbar() {
         <div className="mobile-drawer mobile-drawer-scrollable">
           <a href={toolsHref} onClick={close} className="mobile-drawer-header">All Tools</a>
           
-          <div style={{ padding: '8px 0' }}>
+          <div className="mobile-tools-group">
             <span className="mobile-category-title">IMAGE TOOLS</span>
             {imageTools.map(t => (
-              <NavLink key={t.to} to={t.to} onClick={close} style={{ fontSize: '14px', padding: '6px 12px', display: 'block' }}>{t.name}</NavLink>
+              <NavLink key={t.to} to={t.to} onClick={close} className="mobile-nav-link">{t.name}</NavLink>
             ))}
           </div>
 
-          <div style={{ padding: '8px 0' }}>
+          <div className="mobile-tools-group">
             <span className="mobile-category-title">PDF TOOLS</span>
             {pdfTools.map(t => (
-              <NavLink key={t.to} to={t.to} onClick={close} style={{ fontSize: '14px', padding: '6px 12px', display: 'block' }}>{t.name}</NavLink>
+              <NavLink key={t.to} to={t.to} onClick={close} className="mobile-nav-link">{t.name}</NavLink>
+            ))}
+          </div>
+
+          <div className="mobile-tools-group">
+            <span className="mobile-category-title">VIDEO TOOLS</span>
+            {videoTools.map(t => (
+              <NavLink key={t.to} to={t.to} onClick={close} className="mobile-nav-link">{t.name}</NavLink>
             ))}
           </div>
 
@@ -232,6 +243,31 @@ export default function Navbar() {
           font-size: 10px;
           transition: transform 0.2s;
         }
+        .alltools-arrow.rotate {
+          transform: rotate(180deg);
+        }
+        .nav-dropdown-item {
+          display: block;
+          padding: 8px 12px;
+          border-radius: 6px;
+          color: var(--text-primary);
+          text-decoration: none;
+          font-size: 13px;
+          transition: background 0.2s;
+        }
+        .nav-dropdown-item.active {
+          color: #6EE7B7;
+        }
+        .mobile-tools-group {
+          padding: 8px 0;
+        }
+        .mobile-nav-link {
+          font-size: 14px;
+          padding: 6px 12px;
+          display: block;
+          color: var(--text-primary);
+          text-decoration: none;
+        }
         .dropdown-menu-premium {
           position: absolute;
           top: 100%;
@@ -242,7 +278,7 @@ export default function Navbar() {
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
           padding: 16px;
           display: grid;
-          grid-template-columns: 220px 220px;
+          grid-template-columns: 200px 200px 200px;
           gap: 16px;
           z-index: 200;
           backdrop-filter: blur(12px);
