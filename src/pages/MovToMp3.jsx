@@ -97,6 +97,15 @@ export default function MovToMp3() {
         <title>Extract MOV to MP3 Online — Free &amp; Offline | Fileora</title>
         <meta name="description" content="Extract audio tracks from Apple QuickTime MOV videos to universal high-quality MP3 format. 100% offline, private client-side audio extraction in your browser." />
         <link rel="canonical" href="https://fileora.tech/mov-to-mp3" data-rh="true" />
+        <meta property="og:title" content="Extract MOV to MP3 Online — Free &amp; Offline | Fileora" />
+        <meta property="og:description" content="Extract audio tracks from Apple QuickTime MOV videos to universal high-quality MP3 format. 100% offline, private client-side audio extraction in your browser." />
+        <meta property="og:url" content="https://fileora.tech/mov-to-mp3" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Extract MOV to MP3 Online — Free &amp; Offline | Fileora" />
+        <meta name="twitter:description" content="Extract audio tracks from Apple QuickTime MOV videos to universal high-quality MP3 format. 100% offline, private client-side audio extraction in your browser." />
+        <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
       </Helmet>
 
       <main className="tool-main">

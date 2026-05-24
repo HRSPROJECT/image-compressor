@@ -102,6 +102,15 @@ export default function CompressVideo() {
         <title>Compress Video Online — Shrink Video File Size | Fileora</title>
         <meta name="description" content="Reduce video file sizes online for free. In-browser client-side video compressor—shrink MP4, MOV, WebM files locally with zero limits and 100% privacy." />
         <link rel="canonical" href="https://fileora.tech/compress-video" data-rh="true" />
+        <meta property="og:title" content="Compress Video Online — Shrink Video File Size | Fileora" />
+        <meta property="og:description" content="Reduce video file sizes online for free. In-browser client-side video compressor—shrink MP4, MOV, WebM files locally with zero limits and 100% privacy." />
+        <meta property="og:url" content="https://fileora.tech/compress-video" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Compress Video Online — Shrink Video File Size | Fileora" />
+        <meta name="twitter:description" content="Reduce video file sizes online for free. In-browser client-side video compressor—shrink MP4, MOV, WebM files locally with zero limits and 100% privacy." />
+        <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
       </Helmet>
 
       <main className="tool-main">

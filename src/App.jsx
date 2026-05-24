@@ -44,6 +44,7 @@ const RepeatVideo = React.lazy(() => import('./pages/RepeatVideo'))
 const IlovepdfAlternative = React.lazy(() => import('./pages/IlovepdfAlternative'))
 const SmallpdfAlternative = React.lazy(() => import('./pages/SmallpdfAlternative'))
 const CamscannerAlternative = React.lazy(() => import('./pages/CamscannerAlternative'))
+const NotFound = React.lazy(() => import('./pages/NotFound'))
 
 
 const LoadingFallback = () => (
@@ -109,6 +110,9 @@ export default function App() {
               <Route path="/alternative/ilovepdf" element={<IlovepdfAlternative />} />
               <Route path="/alternative/smallpdf" element={<SmallpdfAlternative />} />
               <Route path="/alternative/camscanner" element={<CamscannerAlternative />} />
+              
+              {/* Fallback route */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </BrowserRouter>

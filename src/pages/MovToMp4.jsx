@@ -105,6 +105,15 @@ export default function MovToMp4() {
         <title>Apple MOV to MP4 Converter Online — Free &amp; Offline | Fileora</title>
         <meta name="description" content="Convert Apple QuickTime MOV videos to universal MP4 files online for free. 100% offline, privacy-first conversion directly inside your browser." />
         <link rel="canonical" href="https://fileora.tech/mov-to-mp4" data-rh="true" />
+        <meta property="og:title" content="Apple MOV to MP4 Converter Online — Free &amp; Offline | Fileora" />
+        <meta property="og:description" content="Convert Apple QuickTime MOV videos to universal MP4 files online for free. 100% offline, privacy-first conversion directly inside your browser." />
+        <meta property="og:url" content="https://fileora.tech/mov-to-mp4" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Apple MOV to MP4 Converter Online — Free &amp; Offline | Fileora" />
+        <meta name="twitter:description" content="Convert Apple QuickTime MOV videos to universal MP4 files online for free. 100% offline, privacy-first conversion directly inside your browser." />
+        <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
       </Helmet>
 
       <main className="tool-main">

@@ -123,10 +123,10 @@ export default function CompressPdf() {
       <Navbar />
       <Helmet>
         <title>Free PDF Compressor — Compress PDF to 100KB, 200KB, 500KB Online | Fileora</title>
-        <meta name="description" content="Compress PDF files online for free. Target specific file sizes: 100KB, 200KB, 500KB. Browser-based, no uploads, no signup. Reduce PDF size without losing quality." />
+        <meta name="description" content="Compress PDF files for free online. Target exact sizes like 100KB, 200KB, or 500KB. Safe, browser-based local compression with zero loss in visual quality." />
         <link rel="canonical" href="https://fileora.tech/compress-pdf" data-rh="true" />
         <meta property="og:title" content="Free PDF Compressor — Compress PDF to 100KB, 200KB, 500KB Online | Fileora" />
-        <meta property="og:description" content="Compress PDF files online for free. Target specific file sizes: 100KB, 200KB, 500KB. Browser-based, no uploads, no signup. Reduce PDF size without losing quality." />
+        <meta property="og:description" content="Compress PDF files for free online. Target exact sizes like 100KB, 200KB, or 500KB. Safe, browser-based local compression with zero loss in visual quality." />
         <meta property="og:url" content="https://fileora.tech/compress-pdf" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://fileora.tech/og-image.png" />

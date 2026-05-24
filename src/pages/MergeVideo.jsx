@@ -113,6 +113,15 @@ export default function MergeVideo() {
         <title>Merge Videos Online — Combine Video Clips | Fileora</title>
         <meta name="description" content="Combine and stitch multiple videos together online for free. In-browser client-side video merger—join MP4, MOV, or WebM clips locally and securely." />
         <link rel="canonical" href="https://fileora.tech/merge-video" data-rh="true" />
+        <meta property="og:title" content="Merge Videos Online — Combine Video Clips | Fileora" />
+        <meta property="og:description" content="Combine and stitch multiple videos together online for free. In-browser client-side video merger—join MP4, MOV, or WebM clips locally and securely." />
+        <meta property="og:url" content="https://fileora.tech/merge-video" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Merge Videos Online — Combine Video Clips | Fileora" />
+        <meta name="twitter:description" content="Combine and stitch multiple videos together online for free. In-browser client-side video merger—join MP4, MOV, or WebM clips locally and securely." />
+        <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
       </Helmet>
 
       <main className="tool-main">

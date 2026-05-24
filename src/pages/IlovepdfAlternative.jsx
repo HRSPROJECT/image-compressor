@@ -146,6 +146,7 @@ export default function IlovepdfAlternative() {
 
           <div style={{ overflowX: 'auto', background: 'var(--bg-secondary)', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '600px' }}>
+              <caption style={{ display: 'none' }}>Fileora vs iLovePDF Feature Comparison</caption>
               <thead>
                 <tr style={{ borderBottom: '1px solid var(--border-color)', background: 'var(--bg-tertiary)' }}>
                   <th style={{ padding: '16px 24px', fontWeight: 600, color: 'var(--text-primary)' }}>Capability</th>

@@ -142,7 +142,7 @@ export default function PngToPdf() {
               </div>
 
               <div>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>PNG Queue ({files.length} files)</h3>
+                <div style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>PNG Queue ({files.length} files)</div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', maxHeight: '100px', overflowY: 'auto' }}>
                   {files.map((f, i) => (
                     <div key={i} style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>

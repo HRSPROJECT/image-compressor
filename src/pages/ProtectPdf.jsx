@@ -143,6 +143,11 @@ export default function ProtectPdf() {
         <meta property="og:description" content="Secure your PDF files for free online. Set opening passwords, edit lock codes, copy-protection, and printing blocks locally in your browser." />
         <meta property="og:url" content="https://fileora.tech/protect-pdf" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Protect PDF - Add Password & Lock PDF Online | Fileora" />
+        <meta name="twitter:description" content="Secure your PDF files for free online. Set opening passwords, edit lock codes, copy-protection, and printing blocks locally in your browser." />
+        <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
         <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>

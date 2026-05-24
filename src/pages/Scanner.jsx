@@ -1270,7 +1270,7 @@ export default function Scanner() {
       <Navbar />
       <Helmet>
         <title>Free PDF Document Scanner Online - CamScanner & Google Drive Alternative | Fileora</title>
-        <meta name="description" content="Scan multi-page documents using your camera or images. Features automatic border cropping, perspective undistortion, and Google Drive style professional document filters." />
+        <meta name="description" content="Scan multi-page documents securely with your camera. Features auto-border cropping, perspective correction, and professional document filters locally." />
         <link rel="canonical" href="https://fileora.tech/scanner" data-rh="true" />
         <meta property="og:title" content="Free PDF Document Scanner Online - CamScanner Alternative | Fileora" />
         <meta property="og:description" content="Scan documents securely. Multi-page capture with real-time guides, auto-crop boundaries, perspective alignment, and premium contrast filter adjustments." />

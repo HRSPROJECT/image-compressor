@@ -44,7 +44,8 @@ const routes = [
   '/repeat-video',
   '/alternative/ilovepdf',
   '/alternative/smallpdf',
-  '/alternative/camscanner'
+  '/alternative/camscanner',
+  '/404'
 ];
 
 async function prerender() {

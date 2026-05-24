@@ -221,6 +221,15 @@ export default function TrimVideo() {
         <title>Trim Video Online — Cut &amp; Slice Video Clips | Fileora</title>
         <meta name="description" content="Trim and cut video files online for free. Precise client-side video cutter—slice MP4, MOV, or WebM clips locally in-browser with zero limits." />
         <link rel="canonical" href="https://fileora.tech/trim-video" data-rh="true" />
+        <meta property="og:title" content="Trim Video Online — Cut &amp; Slice Video Clips | Fileora" />
+        <meta property="og:description" content="Trim and cut video files online for free. Precise client-side video cutter—slice MP4, MOV, or WebM clips locally in-browser with zero limits." />
+        <meta property="og:url" content="https://fileora.tech/trim-video" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Trim Video Online — Cut &amp; Slice Video Clips | Fileora" />
+        <meta name="twitter:description" content="Trim and cut video files online for free. Precise client-side video cutter—slice MP4, MOV, or WebM clips locally in-browser with zero limits." />
+        <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
       </Helmet>
 
       <main className="tool-main">

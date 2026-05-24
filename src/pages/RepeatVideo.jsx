@@ -115,6 +115,15 @@ export default function RepeatVideo() {
         <title>Loop &amp; Repeat Video Online — Free &amp; Offline | Fileora</title>
         <meta name="description" content="Repeat and loop video files online for free. Combine multiple loops of the same video into a single MP4 locally inside your browser with 100% privacy." />
         <link rel="canonical" href="https://fileora.tech/repeat-video" data-rh="true" />
+        <meta property="og:title" content="Loop &amp; Repeat Video Online — Free &amp; Offline | Fileora" />
+        <meta property="og:description" content="Repeat and loop video files online for free. Combine multiple loops of the same video into a single MP4 locally inside your browser with 100% privacy." />
+        <meta property="og:url" content="https://fileora.tech/repeat-video" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Loop &amp; Repeat Video Online — Free &amp; Offline | Fileora" />
+        <meta name="twitter:description" content="Repeat and loop video files online for free. Combine multiple loops of the same video into a single MP4 locally inside your browser with 100% privacy." />
+        <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
       </Helmet>
 
       <main className="tool-main">

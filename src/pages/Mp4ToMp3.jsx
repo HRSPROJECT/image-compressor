@@ -96,6 +96,15 @@ export default function Mp4ToMp3() {
         <title>Extract Audio from Video Online — MP4 to MP3 | Fileora</title>
         <meta name="description" content="Extract audio tracks from MP4, MOV, or WebM videos online for free. Convert video to high-fidelity MP3 locally and securely inside your browser." />
         <link rel="canonical" href="https://fileora.tech/mp4-to-mp3" data-rh="true" />
+        <meta property="og:title" content="Extract Audio from Video Online — MP4 to MP3 | Fileora" />
+        <meta property="og:description" content="Extract audio tracks from MP4, MOV, or WebM videos online for free. Convert video to high-fidelity MP3 locally and securely inside your browser." />
+        <meta property="og:url" content="https://fileora.tech/mp4-to-mp3" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Extract Audio from Video Online — MP4 to MP3 | Fileora" />
+        <meta name="twitter:description" content="Extract audio tracks from MP4, MOV, or WebM videos online for free. Convert video to high-fidelity MP3 locally and securely inside your browser." />
+        <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
       </Helmet>
 
       <main className="tool-main">

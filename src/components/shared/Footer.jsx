@@ -54,13 +54,17 @@ export default function Footer() {
       <div className="container footer-inner-container">
         {/* Links Grid */}
         <div className="footer-links-grid">
-          {/* Brand Col */}
           <div className="footer-brand-col">
             <Link to="/" className="footer-brand footer-brand-title">Fileora</Link>
             <p className="footer-brand-desc">
               State-of-the-art privacy-first browser tools. Compress, merge, scan, and convert documents locally without uploads.
             </p>
-            <span className="footer-brand-check">✓ 100% Client-Side Engine</span>
+            <div style={{ display: 'flex', gap: '12px', fontSize: '0.8rem', marginTop: '4px' }}>
+              <a href="https://github.com/HRSPROJECT/image-compressor" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>GitHub</a>
+              <span style={{ color: 'var(--text-tertiary)' }}>·</span>
+              <a href="https://x.com/fileora_tech" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Twitter / X</a>
+            </div>
+            <span className="footer-brand-check" style={{ marginTop: '8px', display: 'block' }}>✓ 100% Client-Side Engine</span>
           </div>
 
           {/* PDF Column */}

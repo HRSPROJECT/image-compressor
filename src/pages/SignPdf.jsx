@@ -375,6 +375,11 @@ export default function SignPdf() {
         <meta property="og:description" content="Sign PDF files online for free. Type standard cursive signatures, draw smooth custom signatures, or upload transparent image PNG stamps. Drag-resizable layout." />
         <meta property="og:url" content="https://fileora.tech/sign-pdf" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://fileora.tech/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sign PDF Online - Draw or Type PDF Signatures | Fileora" />
+        <meta name="twitter:description" content="Sign PDF files online for free. Type standard cursive signatures, draw smooth custom signatures, or upload transparent image PNG stamps. Drag-resizable layout." />
+        <meta name="twitter:image" content="https://fileora.tech/og-image.png" />
         <script type="application/ld+json">{JSON.stringify(appSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <style>
