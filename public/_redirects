@@ -1,3 +1,4 @@
+https://fileora-image-compressor.pages.dev/* https://fileora.tech/:splat 301
 # Cloudflare Pages Redirects
 # Redirect www to non-www
 https://www.fileora.tech/* https://fileora.tech/:splat 301
