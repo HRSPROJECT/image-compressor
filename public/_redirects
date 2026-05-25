@@ -4,3 +4,14 @@ https://fileora-image-compressor.pages.dev/* https://fileora.tech/:splat 301
 https://www.fileora.tech/* https://fileora.tech/:splat 301
 # Fallback for non-prerendered routes (SPA routing)
 /* /index.html 200
+
+# Block Scanners (403 Forbidden)
+/wp-admin/* 403
+/.env 403
+/.docker/* 403
+/s3/* 403
+/.git/* 403
+
+# Force canonical tools to no trailing slash
+/compress/ /compress 301
+/convert/ /convert 301
